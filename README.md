@@ -1,0 +1,2 @@
+<!-- Shhh! Nobody say anything about the repeating background -->
+[![Header image](https://raw.githubusercontent.com/bakonpancakz/bakonpancakz/main/Github-Banner.png)](https://twitter.com/bakonpancakz)
