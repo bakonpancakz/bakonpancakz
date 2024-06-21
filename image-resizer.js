@@ -1,8 +1,13 @@
 const fs = require('fs')
 const path = require('path')
 const sharp = require('sharp')
-
-const extAllowlist = new Set(['.png', '.jpg', '.jpeg', '.svg', '.webp'])
+const extAllowlist = new Set([
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.svg',
+    '.webp'
+])
 
 /**
  * Simple script to resize all images and icons
@@ -11,6 +16,7 @@ const extAllowlist = new Set(['.png', '.jpg', '.jpeg', '.svg', '.webp'])
  * @param {number?} width - Desired Image Width 
  */
 function ProcessDirectory(directory, height, width = undefined) {
+    console.log(`\n--- ${directory} ---`)
     for (const filename of fs.readdirSync(directory)) {
         // Silent Ignore
         if (filename.endsWith('.min.png')) continue
@@ -27,7 +33,9 @@ function ProcessDirectory(directory, height, width = undefined) {
             .resize(height, width, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
             .png({ compressionLevel: 9 })
             .toFile(outPath)
+
+        console.log(`${inPath.padEnd(32, ' ')} => ${outPath.padEnd(32, ' ')}`)
     }
 }
 ProcessDirectory('assets/icons', 32, 32)
-ProcessDirectory('assets/logos', 128)
+ProcessDirectory('assets/logos', 64, 64)
