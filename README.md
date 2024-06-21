@@ -1,23 +1,18 @@
 <h3 style='display:flex; gap:8px; align-items: center;'>
-    <!-- Username -->
     <img src='images/cat.gif'>
     <span>bakonpancakz</span>
-    <span>▫</span>
-    <!-- Socials -->
-    <a target='_blank' href='https://www.linkedin.com/in/jose-silva-jr/'>
-        <img src='images/linkedin.min.png' height=16 width=16>
-    </a>
-    <a target='_blank' href='https://twitter.com/bakonpancakz'>
-        <img src='images/twitter.min.png' height=16 width=16>
-    </a>
-    <a target='_blank' href='https://suzzy.games/blog'>
-        <img src='images/suzzy.min.png' height=16 width=16>
-    </a>
 </h3>
 
-<p>building dreams one line at a time</p>
+Freelancer ~ Full-Stack Developer
 
-#### ※ Personal Projects - *Games and Sites*
+***❝ building dreams one line at a time ❞***
+
+[Portfolio](https://github.com/allottedbit) -
+[Email](mailto:bakonpancakz@gmail.com) -
+[LinkedIn](https://www.linkedin.com/in/jose-silva-jr/) -
+[Twitter](https://twitter.com/bakonpancakz)
+
+#### ※ My Personal Projects
 <ul>
     <li>
         <a target='_blank' href='https://suzzy.games/'>
@@ -33,7 +28,8 @@
     </li>
 </ul>
 
-#### ※ Toolbelt - *Languages and Libraries*
+
+#### ※ My Toolbelt
 <ul>
     <li>
         <a style=target='_blank' href='https://www.typescriptlang.org/'>
@@ -60,15 +56,15 @@
         </a>
     </li>
     <li>
-        <a style=target='_blank' href='https://www.debian.org/'>
-            <img src='images/debian.min.png' height=16 width=16>
-            <span>Debian (Server OS)</span>
-        </a>
-    </li>
-    <li>
         <a style=target='_blank' href='https://www.docker.com/'>
             <img src='images/docker.min.png' height=16 width=16>
             <span>Docker (Deployment)</span>
+        </a>
+    </li>
+    <li>
+        <a style=target='_blank' href='https://www.debian.org/'>
+            <img src='images/debian.min.png' height=16 width=16>
+            <span>Debian (Server OS)</span>
         </a>
     </li>
     <li>
@@ -80,17 +76,7 @@
     <li>
         <a style=target='_blank' href='https://www.cloud.google.com/'>
             <img src='images/googlecloud.min.png' height=16 width=16>
-            <span>Google Cloud Platform (Cloud)</span>
+            <span>Google Cloud (Cloud)</span>
         </a>
     </li>
 </ul>
-
-#### ※ Portfolio - *Newest Commissions First*
-<div class='display:flex; gap:16px; flex-wrap:wrap; align-items: center;'>
-    <a target='_blank' href='https://github.com/bakonpancakz/gig-nkc'>
-        <img alt='Novedades K-Chido' src='images/nkc.min.png' height=64>
-    </a>
-    <a target='_blank' href='https://github.com/bakonpancakz/gig-garretts'>
-        <img alt='Garretts Bar and Grill' src='images/garretts.min.png' height=64>
-    </a>
-</div>
