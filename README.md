@@ -1,86 +1,86 @@
-<h3 >
-    <img src="images/cat-sleep.gif" alt="oneko">
-    <span>Jose Silva (bakonpancakz)</span>
-</h3>
+<h1><img src="oneko-sleep.gif" alt="oneko"> Jose Silva (bakonpancakz)</h1>
+<h3>Freelancer ~ Full-Stack Developer</h3>
+<i>❝ building dreams one line at a time ❞</i>
 
-Freelancer ~ Full-Stack Developer
+<hr>
 
-***❝ building dreams one line at a time ❞***
+<h3>My Toolkit</h3>
+<p>Listed in no particular order, just things I use regularly:</p>
+<p>
+    <img alt="Cloudflare" src="badges/generated/badge_cloudflare.png" />
+    <img alt="Debian" src="badges/generated/badge_debian.png" />
+    <img alt="DigitalOcean" src="badges/generated/badge_digitalocean.png" />
+    <img alt="Docker" src="badges/generated/badge_docker.png" />
+    <img alt="Google Cloud" src="badges/generated/badge_gcp.png" />
+    <img alt="Golang" src="badges/generated/badge_go.png" />
+    <img alt="Postgres" src="badges/generated/badge_postgres.png" />
+    <img alt="NodeJS" src="badges/generated/badge_node.png" />
+    <img alt="React" src="badges/generated/badge_react.png" />
+    <img alt="TypeScript" src="badges/generated/badge_typescript.png" />
+    <img alt="HTML5" src="badges/generated/badge_html.png" />
+    <img alt="CSS" src="badges/generated/badge_css.png" />
+    <img alt="JavaScript" src="badges/generated/badge_javascript.png" />
+    <img alt="PugJS" src="badges/generated/badge_pug.png" />
+    <img alt="Git" src="badges/generated/badge_git.png" />
+    <img alt="TensorFlow" src="badges/generated/badge_tensorflow.png" />
+    <img alt="Redis" src="badges/generated/badge_redis.png" />
+</p>
 
-[Email (bakonpancakz@gmail.com)](mailto:bakonpancakz@gmail.com) -
-[LinkedIn (Work)](https://www.linkedin.com/in/jose-silva-jr/) -
-[Twitter (Life)](https://twitter.com/bakonpancakz)
+<h3>My Projects</h3>
+<p>Personal Projects cleaned up and documented for public use:</p>
+<table>
+    <thead>
+        <tr align="left">
+            <th width="200px">Name</th>
+            <th width="700px">Description</th>
+            <th width="200px">Links</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tools-email</td>
+            <td>Provides a REST API for sending emails, with incoming email forwarding</td>
+            <td><a href="https://github.com/bakonpancakz/tools-email">Repository</a></td>
+        </tr>
+        <tr>
+            <td>tools-gatekeeper</td>
+            <td>Gatekeep S3 Objects on Providers with Limited Permission Features</td>
+            <td><a href="https://github.com/bakonpancakz/tools-gatekeeper">Repository</a></td>
+        </tr>
+        <!-- <tr>
+            <td>tools-stickerboard</td>
+            <td>Allow strangers to *safely* place GIFs and Images onto your Steam Profile</td>
+            <td>
+                <a href="https://github.com/bakonpancakz/tools-stickerboard">Repository</a>
+                <span>&bull;</span>
+                <a href="https://stickers.panca.kz">Website</a>
+            </td>
+        </tr>
+        <tr>
+            <td>discord-clips</td>
+            <td>Media Sharing Website for Discord Users</td>
+            <td>
+                <a href="https://github.com/bakonpancakz/discord-clips">Repository</a>
+                <a href="https://clips.panca.kz">Website</a>
+            </td>
+        </tr> -->
+    </tbody>
+</table>
 
-#### ※ My Toolbelt
-<ul>
-    <li>
-        <a target='_blank' href='https://www.typescriptlang.org/'>
-            <img src='images/typescript.min.png' height=16 width=16>
-            <span>TypeScript (Frontend)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://go.dev/'>
-            <img src='images/go.min.png' height=16 width=16>
-            <span>Golang (Backend)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://nginx.org/en/'>
-            <img src='images/nginx.min.png' height=16 width=16>
-            <span>NGINX (Webserver)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.postgresql.org/'>
-            <img src='images/postgres.min.png' height=16 width=16>
-            <span>Postgres (Database)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.docker.com/'>
-            <img src='images/docker.min.png' height=16 width=16>
-            <span>Docker (Deployment)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.debian.org/'>
-            <img src='images/debian.min.png' height=16 width=16>
-            <span>Debian (Server OS)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.cloudflare.com/'>
-            <img src='images/cloudflare.min.png' height=16 width=16>
-            <span>Cloudflare (Proxy)</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.cloud.google.com/'>
-            <img src='images/googlecloud.min.png' height=16 width=16>
-            <span>Google Cloud (Cloud)</span>
-        </a>
-    </li>
-</ul>
+<br>
 
-#### ※ My Personal Projects
-<ul>
-    <li>
-        <a target='_blank' href='https://suzzy.games/'>
-            <img src='images/suzzy.min.png' height=16 width=16>
-            <span>suzzy games</span>
-        </a>
-    </li>
-    <li>
-        <a target='_blank' href='https://www.roblox.com/games/9987852646/Cart-Ride-Around-a-Fumo'>
-            <img src='images/craf.min.png' height=16 width=16>
-            <span>Cart Ride Around a Fumo</span>
-        </a>
-    </li>
-</ul>
-
-<!-- 
-#### ※ My Portfolio - *Newest Commissions First*
-[![Novedades K-Chido](images/nkc.min.png)](https://github.com/bakonpancakz/gig-nkc)
-[![Garretts Bar and Grill](images/garretts.min.png)](https://github.com/bakonpancakz/gig-garretts) 
--->
+<p align="center">Wanna get in touch? Find me here!</p>
+<p align="center">
+    <a href="mailto:bakonpancakz@gmail.com">
+        <img alt="Email" src="badges/generated/social_email.png">
+    </a>
+    <a href="https://x.com/bakonpancakz">
+        <img alt="Twitter" src="badges/generated/social_twitter.png">
+    </a>
+    <a href="https://www.linkedin.com/in/jose-silva-jr/">
+        <img alt="LinkedIn" src="badges/generated/social_linkedin.png">
+    </a>
+</p>
+<h6 align="center">
+    <i>Twitter is a personal space - beware!</i>
+</h6>

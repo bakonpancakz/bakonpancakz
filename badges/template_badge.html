@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #0d1117;
+        }
+
+        div.badge {
+            width: fit-content;
+            height: 20px;
+            padding: 0 8px;
+            box-sizing: border-box;
+            align-items: center;
+            display: flex;
+            gap: 4px;
+            border-radius: 2px;
+        }
+
+        img {
+            height: 14px;
+            filter: drop-shadow(0px 0px 1px rgb(0, 0, 0, 0.25))
+        }
+
+        span {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 14px;
+            color: #f0f0f0;
+            filter: drop-shadow(0px 0px 1px rgb(0, 0, 0, 0.25))
+        }
+    </style>
+</head>
+
+<body>
+    <div class="badge" style="background-color: {{color}};">
+        <img src="{{image}}">
+        <span>{{label}}</span>
+    </div>
+</body>
+
+</html>
