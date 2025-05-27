@@ -15,5 +15,6 @@
     "pug | Pug | #56332b",
     "git | Git | #f05133",
     "tensorflow | TensorFlow | #ff6f00",
-    "redis | Redis | #c6302b"
+    "redis | Redis | #c6302b",
+    "lua | Lua | #000080"
 ]

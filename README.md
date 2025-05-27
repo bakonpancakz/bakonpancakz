@@ -24,10 +24,11 @@
     <img alt="Git" src="badges/generated/badge_git.png" />
     <img alt="TensorFlow" src="badges/generated/badge_tensorflow.png" />
     <img alt="Redis" src="badges/generated/badge_redis.png" />
+    <img alt="Lua" src="badges/generated/badge_lua.png">
 </p>
 
-<h3>My Projects</h3>
-<p>Personal Projects cleaned up and documented for public use:</p>
+<h3>My Stuff</h3>
+<p>Personal projects cleaned up and documented for public use:</p>
 <table>
     <thead>
         <tr align="left">
@@ -38,14 +39,22 @@
     </thead>
     <tbody>
         <tr>
-            <td>tools-email</td>
+            <td>📧 tools-email</td>
             <td>Provides a REST API for sending emails, with incoming email forwarding</td>
             <td><a href="https://github.com/bakonpancakz/tools-email">Repository</a></td>
         </tr>
         <tr>
-            <td>tools-gatekeeper</td>
+            <td>📦 tools-gatekeeper</td>
             <td>Gatekeep S3 Objects on Providers with Limited Permission Features</td>
             <td><a href="https://github.com/bakonpancakz/tools-gatekeeper">Repository</a></td>
+        </tr>
+        <tr>
+            <td>
+                <img alt="Cirno Fumo" src="badges/images/craf.png">    
+                Cart Ride Around a Fumo
+            </td>
+            <td>Cute game I made on ROBLOX for fun, play it!</td>
+            <td><a href="https://www.roblox.com/games/9987852646">Game</a></td>
         </tr>
         <!-- <tr>
             <td>tools-stickerboard</td>
@@ -79,6 +88,9 @@
     </a>
     <a href="https://www.linkedin.com/in/jose-silva-jr/">
         <img alt="LinkedIn" src="badges/generated/social_linkedin.png">
+    </a>
+    <a href="https://www.roblox.com/users/41537575/profile">
+        <img alt="ROBLOX" src="badges/generated/social_roblox.png">
     </a>
 </p>
 <h6 align="center">
