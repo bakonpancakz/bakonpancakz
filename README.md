@@ -50,6 +50,11 @@
             <td><a href="https://github.com/bakonpancakz/tools-gatekeeper">Repository</a></td>
         </tr>
         <tr>
+            <td>⌚ discord-trackpad</td>
+            <td>Show off your Wakatime and current Lines of Code to Discord</td>
+            <td><a href="https://github.com/bakonpancakz/discord-trackpad">Repository</a></td>
+        </tr>
+        <tr>
             <td>
                 <img alt="Cirno Fumo" src="badges/images/craf.png">    
                 Cart Ride Around a Fumo
