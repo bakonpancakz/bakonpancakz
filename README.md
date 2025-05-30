@@ -25,6 +25,7 @@
     <img alt="TensorFlow" src="badges/generated/badge_tensorflow.png" />
     <img alt="Redis" src="badges/generated/badge_redis.png" />
     <img alt="Lua" src="badges/generated/badge_lua.png">
+    <img alt="Visual Studio Code" src="badges/generated/badge_vscode.png">
 </p>
 
 <h3>My Stuff</h3>

@@ -16,5 +16,6 @@
     "git | Git | #f05133",
     "tensorflow | TensorFlow | #ff6f00",
     "redis | Redis | #c6302b",
-    "lua | Lua | #000080"
+    "lua | Lua | #000080",
+    "vscode | Visual Studio Code | #0065a9"
 ]
