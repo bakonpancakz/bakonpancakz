@@ -41,17 +41,17 @@
     <tbody>
         <tr>
             <td>📧 tools-email</td>
-            <td>Provides a REST API for sending emails, with incoming email forwarding</td>
+            <td>Provide your application a way to send emails with minimal setup</td>
             <td><a href="https://github.com/bakonpancakz/tools-email">Repository</a></td>
         </tr>
         <tr>
             <td>📦 tools-gatekeeper</td>
-            <td>Gatekeep S3 Objects on Providers with Limited Permission Features</td>
+            <td>Use HMAC Tokens and Patterns to Gatekeep S3 Objects</td>
             <td><a href="https://github.com/bakonpancakz/tools-gatekeeper">Repository</a></td>
         </tr>
         <tr>
             <td>⌚ discord-trackpad</td>
-            <td>Show off your Wakatime and current Lines of Code to Discord</td>
+            <td>Show off your Wakatime and Lines of Code on Discord</td>
             <td><a href="https://github.com/bakonpancakz/discord-trackpad">Repository</a></td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@
                 <img alt="Cirno Fumo" src="badges/images/craf.png">    
                 Cart Ride Around a Fumo
             </td>
-            <td>Cute game I made on ROBLOX for fun, play it!</td>
+            <td>A cute game I made on ROBLOX for fun, try it!!!</td>
             <td><a href="https://www.roblox.com/games/9987852646">Game</a></td>
         </tr>
         <!-- <tr>
