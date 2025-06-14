@@ -7,25 +7,25 @@
 <h3>My Toolkit</h3>
 <p>Listed in no particular order, just things I use regularly:</p>
 <p>
-    <img alt="Cloudflare" src="badges/generated/badge_cloudflare.png" />
-    <img alt="Debian" src="badges/generated/badge_debian.png" />
-    <img alt="DigitalOcean" src="badges/generated/badge_digitalocean.png" />
-    <img alt="Docker" src="badges/generated/badge_docker.png" />
-    <img alt="Google Cloud" src="badges/generated/badge_gcp.png" />
-    <img alt="Golang" src="badges/generated/badge_go.png" />
-    <img alt="Postgres" src="badges/generated/badge_postgres.png" />
-    <img alt="NodeJS" src="badges/generated/badge_node.png" />
-    <img alt="React" src="badges/generated/badge_react.png" />
-    <img alt="TypeScript" src="badges/generated/badge_typescript.png" />
-    <img alt="HTML5" src="badges/generated/badge_html.png" />
-    <img alt="CSS" src="badges/generated/badge_css.png" />
-    <img alt="JavaScript" src="badges/generated/badge_javascript.png" />
-    <img alt="PugJS" src="badges/generated/badge_pug.png" />
-    <img alt="Git" src="badges/generated/badge_git.png" />
-    <img alt="TensorFlow" src="badges/generated/badge_tensorflow.png" />
-    <img alt="Redis" src="badges/generated/badge_redis.png" />
-    <img alt="Lua" src="badges/generated/badge_lua.png">
-    <img alt="Visual Studio Code" src="badges/generated/badge_vscode.png">
+    <img alt="Cloudflare" src="badges/generated/cloudflare.png" />
+    <img alt="Debian" src="badges/generated/debian.png" />
+    <img alt="DigitalOcean" src="badges/generated/digitalocean.png" />
+    <img alt="Docker" src="badges/generated/docker.png" />
+    <img alt="Google Cloud" src="badges/generated/gcp.png" />
+    <img alt="Golang" src="badges/generated/go.png" />
+    <img alt="Postgres" src="badges/generated/postgres.png" />
+    <img alt="NodeJS" src="badges/generated/node.png" />
+    <img alt="React" src="badges/generated/react.png" />
+    <img alt="TypeScript" src="badges/generated/typescript.png" />
+    <img alt="HTML5" src="badges/generated/html.png" />
+    <img alt="CSS" src="badges/generated/css.png" />
+    <img alt="JavaScript" src="badges/generated/javascript.png" />
+    <img alt="PugJS" src="badges/generated/pug.png" />
+    <img alt="Git" src="badges/generated/git.png" />
+    <img alt="TensorFlow" src="badges/generated/tensorflow.png" />
+    <img alt="Redis" src="badges/generated/redis.png" />
+    <img alt="Lua" src="badges/generated/lua.png">
+    <img alt="Visual Studio Code" src="badges/generated/vscode.png">
 </p>
 
 <h3>My Stuff</h3>
@@ -87,16 +87,16 @@
 <p align="center">Wanna get in touch? Find me here!</p>
 <p align="center">
     <a href="mailto:bakonpancakz@gmail.com">
-        <img alt="Email" src="badges/generated/social_email.png">
+        <img alt="Email" src="badges/generated/email.png">
     </a>
     <a href="https://x.com/bakonpancakz">
-        <img alt="Twitter" src="badges/generated/social_twitter.png">
+        <img alt="Twitter" src="badges/generated/twitter.png">
     </a>
     <a href="https://www.linkedin.com/in/jose-silva-jr/">
-        <img alt="LinkedIn" src="badges/generated/social_linkedin.png">
+        <img alt="LinkedIn" src="badges/generated/linkedin.png">
     </a>
     <a href="https://www.roblox.com/users/41537575/profile">
-        <img alt="ROBLOX" src="badges/generated/social_roblox.png">
+        <img alt="ROBLOX" src="badges/generated/roblox.png">
     </a>
 </p>
 <h6 align="center">

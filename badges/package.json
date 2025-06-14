@@ -1,4 +1,12 @@
 {
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "name": "@bakonpancakz/badges",
+  "main": "render.js",
+  "scripts": {
+    "build": "node render.js"
+  },
   "dependencies": {
     "puppeteer": "^24.9.0"
   },

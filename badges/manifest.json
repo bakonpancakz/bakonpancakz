@@ -17,5 +17,10 @@
     "tensorflow | TensorFlow | #ff6f00",
     "redis | Redis | #c6302b",
     "lua | Lua | #000080",
-    "vscode | Visual Studio Code | #0065a9"
+    "vscode | Visual Studio Code | #0065a9",
+    "twitter | Twitter | #1d9bf0",
+    "linkedin | LinkedIn | #007ebb",
+    "email | Email | #e5423b",
+    "roblox | ROBLOX | #3156ff",
+    "vercel | Vercel | #000000"
 ]
