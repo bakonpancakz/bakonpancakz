@@ -40,30 +40,30 @@
         <tr>
             <td>🔒 template-auth</td>
             <td>Feature-rich Authentication Framework written in Go</td>
-            <td><a href="https://github.com/bakonpancakz/template-auth">Repository</a></td>
+            <td><a href="https://code.panca.kz/bakonpancakz/template-auth">Repository</a></td>
         </tr>
         <tr>
             <td>📧 emailengine</td>
             <td>Provide your applications a way to send emails with minimal headache</td>
-            <td><a href="https://github.com/bakonpancakz/emailengine">Repository</a></td>
+            <td><a href="https://code.panca.kz/bakonpancakz/emailengine">Repository</a></td>
         </tr>
         <tr>
             <td>📦 s3-gatekeeper</td>
             <td>Use HMAC tokens and patterns to gatekeep S3 objects</td>
-            <td><a href="https://github.com/bakonpancakz/s3-gatekeeper">Repository</a></td>
+            <td><a href="https://code.panca.kz/bakonpancakz/s3-gatekeeper">Repository</a></td>
         </tr>
         <tr>
             <td>🎴 stickerboard</td>
             <td>Allow strangers to <i>'safely'</i> place Images on a canvas</td>
             <td>
-                <a href="https://github.com/bakonpancakz/stickerboard">Repository</a>
+                <a href="https://code.panca.kz/bakonpancakz/stickerboard">Repository</a>
                 <a href="https://stickers.panca.kz/">Website</a>
             </td>
         </tr>
         <tr>
             <td>⌚ trackpad</td>
             <td>Show off your Wakatime and Lines of Code on Discord</td>
-            <td><a href="https://github.com/bakonpancakz/trackpad">Repository</a></td>
+            <td><a href="https://code.panca.kz/bakonpancakz/trackpad">Repository</a></td>
         </tr>
         <tr>
             <td>
