@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4D58FF">
+    <meta name="description" content="Tech, Chunibyo & Other Delusions">
+    <title>panca.kz - Home</title>
+    <link rel="stylesheet" href="/public/home/main.css?v={{ .Version }}">
+    <link rel="stylesheet" href="/public/fonts/poppins.css?v={{ .Version }}">
+</head>
+
+<body>
+    <div class="homepage-wrapper">
+
+        <div class="block-links">
+            <a href="/blog/">Blog</a>
+            <a href="https://panca.kz/goto/code">Code</a>
+            <a href="https://panca.kz/goto/stickers">Stickers</a>
+        </div>
+        
+        <img 
+            fetchpriority="high"
+            role="main"
+            class="block-graphics" 
+            src="/public/home/banner.gif?v={{ .Version }}"
+            alt="Upward facing sky shot of a red sign with a cloud behind it and a red thread going across">
+            
+        <div class="block-footer">
+            
+            <img 
+                fetchpriority="low"
+                class="footer-barcode" 
+                src="data:image/gif;base64,R0lGODlhGQAZAPAAAAAAAP///yH5BAUKAAAALAAAAAAZABkAAAJvjB9goJ2ImHxs0STVs446vYFNxnXhMUKVqWXstJIQd5mRO1kYXmHq0vKgfLlWD+YbopCjVMdJ/LyMPWD1stQ9aTBpziqKsZbVrvD6A5OozexMpPWIV1nqCe4FvTdCoHpb0oazs0NHGHMzwxcW8VAAADs="
+                alt="A QR Code">
+                
+            <div class="footer-quotes">
+                <p>
+                    <b>Tech, Chunibyo & Other Delusions</b><br>
+                    Welcome to my personal homepage, use the buttons at
+                    the top of the page to visit other sections of the site.
+                </p>                
+                <p id="footer-motd"></p>
+                <script>
+                    m = [
+                        /* Sun */ "Even God rested on the seventh day, are you treating yourself well?",
+                        /* Mon */ "If it's been done before then you can do it too! And if they got close you can get even closer!",
+                        /* Tue */ "It's Tetris Tuesday! Play <a target='_blank' href='https://tetr.io'>TETR.IO</a>!",
+                        /* Wed */ "If bored, read about the 'Nintendo 3DS system software'... What? Too nerdy?",
+                        /* Thu */ "Make sure you clean your keyboard, theres so much hidden gunk in there.",
+                        /* Fri */ "Did you eat something sweet today? Everybody deserves a sweet treat, especially you!",
+                        /* Sat */ "Your abandoned projects miss you, maybe try giving them a visit?",
+                    ]
+                    document.querySelector("#footer-motd").innerHTML = m[new Date().getDay()]
+                </script>
+            </div>
+
+            <div class="footer-spacer"></div>
+            
+            <a id="footer-logo" href="/secret/sprites">
+                <img             
+                    fetchpriority="high"
+                    height="80"
+                    width="210"
+                    src="/public/home/logo.gif?v={{ .Version }}"
+                    alt="Site logo with the word bacon pancakes">
+            </a>
+                
+        </div>
+
+    </div>
+</body>
+
+</html>

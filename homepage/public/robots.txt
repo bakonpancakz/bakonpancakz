@@ -1,0 +1,7 @@
+#   \_/
+# ()o_o) <( beep boop )
+
+Sitemap: https://panca.kz/sitemap.xml
+
+User-agent: *
+Disallow: /public/

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#4D58FF">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/public/blog/favicon.svg?v={{ .Version }}">
+    <link rel="stylesheet" href="/public/blog/main.css?v={{ .Version }}">
+    <link rel="stylesheet" href="/public/fonts/terminus.css?v={{ .Version }}">
+    {{ if .Article }}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ .Article.Title }}">
+    <meta property="og:image" content="https://panca.kz{{ .Article.BannerMain }}?v={{ $.Version }}">
+    <meta property="og:url" content="https://panca.kz/public/blog/{{ .Article.ID }}">
+    <meta property="og:description" content="{{ .Article.Description }}">
+    <meta name="description" content="{{ .Article.Description }}">
+    <title>panca.kz - Blog - {{ .Article.Title }}</title>
+    {{ else }}
+    <meta name="description" content="Tech, Chunibyo & Other Delusions">
+    <title>panca.kz - Blog</title>
+    {{ end }}
+</head>
+
+<body>
+
+    <div class="layout-wrapper">
+        <div class="layout-background"></div>
+        <div class="layout-foreground">
+
+            <!-- Left: Navigation -->
+            <div class="effect-glass-wrapper layout-pane">
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+
+                <nav class="effect-glass-container section-navigation">
+                </nav>
+            </div>
+
+            <!-- Right: Article -->
+            <div class="effect-glass-wrapper layout-pane">
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+                <div class="effect-glass-corner"></div>
+
+                <article class="effect-glass-container section-article">
+                    <h1 id="#" hidden></h1>
+                    <div class="article-list"></div>
+                    <div class="article-header"></div>
+                    <div class="article-content">
+                        <noscript>
+                            <p class="element-paragraph" style="text-align: center;">
+                                <b>NOTICE:</b> JavaScript is required to view this site.
+                            </p>
+                            <style>
+                                div.layout-pane:first-child {
+                                    display: none;
+                                }
+                            </style>
+                        </noscript>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+
+    <data key="version" value="{{ .Version }}"></data>
+    <data key="manifest" value="{{ .ManifestRaw }}"></data>
+
+    <script src="/public/blog/scripts/three.min.js?v={{ .Version }}" defer></script>
+    <script src="/public/blog/scripts/background.js?v={{ .Version }}" defer></script>
+    <script src="/public/blog/scripts/foreground.js?v={{ .Version }}"></script>
+
+</body>
+
+</html>
