@@ -30,6 +30,7 @@ div.homepage-wrapper {
 div.block-links {
     display: flex;
     padding: 0 8px;
+    z-index: 1;
 }
 
 div.block-links a {
@@ -37,17 +38,29 @@ div.block-links a {
     letter-spacing: 2px;
 }
 
-img.block-graphics {
+div.block-banner {
+    background-size: contain;
     position: relative;
     width: 1024px;
     height: 340px;
     margin: -25px 0;
-    z-index: -1;
 }
+
+div.block-banner #banner-link-picross {
+    position: absolute;
+    /* ~80px box */
+    height: 23.5%;
+    width: 7.8%;
+    left: 63.75%;
+    top: 46.5%;
+    opacity: 0.5;
+}
+
 
 div.block-footer {
     display: flex;
     padding: 16px;
+    z-index: 1;
 }
 
 img.footer-barcode {
@@ -91,8 +104,9 @@ a#footer-logo {
         justify-content: space-evenly;
     }
 
-    img.block-graphics {
-        height: unset;
+    div.block-banner {
+        height: 100%;
+        aspect-ratio: 1024 / 340;
         width: 100%;
         margin: 0;
     }
@@ -101,7 +115,7 @@ a#footer-logo {
         display: none;
     }
 
-    div.footer-quotes{
+    div.footer-quotes {
         min-width: 0;
     }
 
