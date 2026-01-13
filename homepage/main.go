@@ -107,20 +107,24 @@ func main() {
 
 func SetupHTTP(stop context.Context, await *sync.WaitGroup) {
 	mux := http.NewServeMux()
+	loc := map[string]any{
+		"Version": CACHE_VERSION,
+	}
 
 	// Webpage Endpoints //
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
-			ServeTemplate(w, r, "templates/home.html", map[string]any{"Version": CACHE_VERSION})
+			ServeTemplate(w, r, "templates/home.html", loc)
 			return
 		}
 		if r.Method == http.MethodGet {
-			ServeTemplate(w, r, "templates/404.html", map[string]any{"Version": CACHE_VERSION})
+			ServeTemplate(w, r, "templates/404.html", loc)
 			return
 		}
 		w.WriteHeader(http.StatusMethodNotAllowed)
 	})
 	mux.HandleFunc("/blog/{slug...}", func(w http.ResponseWriter, r *http.Request) {
+
 		// Although this is a SPA, we still need to render
 		// the OG meta tags for SEO / Social Media Sites
 
@@ -141,13 +145,13 @@ func SetupHTTP(stop context.Context, await *sync.WaitGroup) {
 
 	// Secret Endpoints //
 	mux.HandleFunc("/secret/sprites", func(w http.ResponseWriter, r *http.Request) {
-		ServeTemplate(w, r, "templates/secret_sprites.html", map[string]any{"Version": CACHE_VERSION})
+		ServeTemplate(w, r, "templates/secret_sprites.html", loc)
 	})
 	mux.HandleFunc("/secret/picross", func(w http.ResponseWriter, r *http.Request) {
-		ServeTemplate(w, r, "templates/secret_picross.html", map[string]any{"Version": CACHE_VERSION})
+		ServeTemplate(w, r, "templates/secret_picross_board.html", loc)
 	})
 	mux.HandleFunc("/secret/picross/award", func(w http.ResponseWriter, r *http.Request) {
-		ServeTemplate(w, r, "templates/secret_picross_award.html", map[string]any{"Version": CACHE_VERSION})
+		ServeTemplate(w, r, "templates/secret_picross_award.html", loc)
 	})
 
 	// Special Endpoints //

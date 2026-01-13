@@ -1,7 +1,7 @@
 (() => {
     const correctAnswer = 2560660350
-    const soundSet = document.querySelector("audio#audio-set"); soundSet.volume = 0.2
-    const soundDel = document.querySelector("audio#audio-del"); soundDel.volume = 0.2
+    const soundSet = document.querySelector("audio#audio-set"); soundSet.volume = 0.5
+    const soundDel = document.querySelector("audio#audio-del"); soundDel.volume = 0.5
     document.
         querySelector("div.layout-content")
         .addEventListener(
@@ -62,10 +62,11 @@
             return
         }
 
-        // Redirect to Certificate PDF
+        // Redirect to Certificate
+        localStorage.setItem("secret_picross_complete", "true")
         const time = getTime()
         const name = prompt("Congratulations you win! Please enter your name for your certificate:", "Anon")
-        window.location.replace(
+        window.location.assign(
             `/secret/picross/award?name=${encodeURIComponent(name)}&time=${encodeURIComponent(time)}`
         )
     })
