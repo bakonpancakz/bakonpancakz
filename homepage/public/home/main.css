@@ -28,6 +28,7 @@ div.homepage-wrapper {
 }
 
 div.block-links {
+    position: relative;
     display: flex;
     padding: 0 8px;
     z-index: 1;
@@ -58,6 +59,7 @@ div.block-banner #banner-link-picross {
 
 
 div.block-footer {
+    position: relative;
     display: flex;
     padding: 16px;
     z-index: 1;
