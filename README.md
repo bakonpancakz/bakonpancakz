@@ -38,9 +38,9 @@
     </thead>
     <tbody>
         <tr>
-            <td>🔒 template-auth</td>
-            <td>Feature-rich Authentication Framework written in Go</td>
-            <td><a href="https://panca.kz/repo/template-auth">Repository</a></td>
+            <td>💬 dsoob</td>
+            <td>Self-Hosted Communication Platform</td>
+            <td><a href="https://panca.kz/repo/dsoob">Repository</a></td>
         </tr>
         <tr>
             <td>📧 emailengine</td>
