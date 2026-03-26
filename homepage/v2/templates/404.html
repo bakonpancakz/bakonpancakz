@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/fonts/terminus.css?v={{ .Version }}">
+    <meta name="description" content="Tech, Chunibyo & Other Delusions">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            background: black;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                repeating-linear-gradient(to bottom,
+                    rgba(255, 0, 0, .50) 0px,
+                    rgba(0, 255, 0, .25) 2px,
+                    rgba(0, 0, 255, .50) 4px);
+            mix-blend-mode: multiply;
+        }
+
+        span,
+        a,
+        p {
+            font-family: 'Terminus', sans-serif;
+            font-size: 1.25em;
+            line-height: 1.5em;
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a:hover,
+        a:focus-visible {
+            text-decoration: underline;
+        }
+
+        div.layout-content {
+            padding: 16px;
+            box-sizing: border-box;
+        }
+
+        .animation-blink {
+            animation: kf-blink 500ms infinite step-start;
+        }
+
+        @keyframes kf-blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .animation-scrollin {
+            box-sizing: border-box;
+            overflow: hidden;
+            text-wrap-mode: nowrap;
+            animation: kf-scrollin 1s forwards linear;
+        }
+
+        @keyframes kf-scrollin {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="layout-content animation-wobble">
+        <noscript>
+            <a class="animation-scrollin" href="/">
+                404 PAGE NOT FOUND. Click here to return to the homepage.
+            </a>
+        </noscript>
+    </div>
+
+    <script>
+        const container = document.querySelector("div.layout-content")
+        const messages = [
+            "ERROR: REALITY NOT FOUND",
+            "YOU HAVE FALLEN OUT OF YOUR UNIVERSE.",
+            "<br>",
+            "DONT PANIC! WE CAN SENSE YOU!",
+            "WE ARE BRINGING YOU INTO OURS FOR NOW.",
+            "<br>",
+            "REDIRECTING IN:",
+            "3...",
+            "2...",
+            "1...",
+            "<br>",
+        ]
+        let timer, line = 0
+        function tick() {
+            container.innerHTML = messages
+                .filter((_, i) => line > i)
+                .map((m, i) => {
+                    const me = line - 1 === i
+                    const styleP = me ? "animation-scrollin" : ""
+                    const styleS = me ? "inline-block" : "none"
+                    return `<p class="${styleP} ">${messages[i]} <span class="animation-blink" style="display: ${styleS}">_</span> </p>`
+                }
+                )
+                .join("")
+            if (line === messages.length) {
+                window.location.replace("/")
+                clearInterval(timer)
+            }
+            line++
+        }
+        timer = setInterval(tick, 1000)
+        tick()
+    </script>
+
+</body>
+
+</html>

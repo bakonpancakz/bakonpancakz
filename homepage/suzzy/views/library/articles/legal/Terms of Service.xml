@@ -1,0 +1,24 @@
+<article
+    id="terms-of-service"
+    authorId=""
+    categoryId="legal"
+    title="Terms of Service"
+    created="999998"
+    snippet="Terms of Service governing all suzzy services and products"
+    noindex="true"
+    banner=""
+>
+    <header>Introduction</header>
+    <text>
+        This document entails the general terms of service, covering all suzzy services. 
+        Specific services may override it as necessary — please refer to their respective documents for more information.
+    </text>
+    <text>
+        <c>Last Updated on May 11th 2024</c>
+    </text>
+    
+    <header>1. todo</header>
+    <text>
+        <h>here's where i would put my terms of service. IF I HAD ONE!</h>
+    </text>
+</article>

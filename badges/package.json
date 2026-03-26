@@ -1,5 +1,8 @@
 {
     "type": "module",
+    "scripts": {
+        "build":"npm install && node render.js"
+    },
     "dependencies": {
         "sharp": "^0.34.4"
     }

@@ -1,0 +1,15 @@
+//- Collection Alerts and Errors
+div(class='collection-alert' id='alert-loading')
+    img(src='file://icons/diagram-loading.svg' alt='Icon for Loading')
+    span Loading #{loading_message ||'Content'}
+div(class='collection-alert' id='alert-error' hidden)
+    img(src='file://icons/icon-cross.svg' alt='Icon for Cross')
+    span An Error Has Occurred
+
+if empty_message
+    div(class='collection-alert' id='alert-empty' hidden)
+        img(src=empty_source alt=`Icon for ${empty_alt}`)
+        span #{empty_message}
+
+//- Collection Items
+div(class='wrapper-collection')

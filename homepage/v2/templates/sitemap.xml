@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+{{ range .Locations }}
+    <url>
+        <loc>{{ . }}</loc>
+        <lastmod>{{ $.Date }}</lastmod>
+    </url>
+{{ end }}
+
+{{ range .Manifest.Articles }}
+    <url>
+        <loc>https://panca.kz/blog/{{ .ID }}</loc>
+        <lastmod>{{ .Date.UTC.Format "2006-01-02" }}</lastmod>
+    </url>
+{{ end }}
+
+</urlset>

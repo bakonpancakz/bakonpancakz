@@ -1,0 +1,57 @@
+extends ../_TemplateProfile
+block pageHeader
+    title suzzy - Manage Account
+block pageContent 
+    - var loading_message = 'Account'
+    p(class='text-hero') Account
+    p(class='text-tip') Welcome to your account's security settings. 
+    p(class='text-tip') Here, you can manage various security options to help protect your account.
+    div(class='collection-divider')
+    include ../_TemplateProfilePage
+
+    //- div(id='security-wrapper' hidden)
+    //-     //- Email Address
+    //-     p(class='text-header') Email Address
+    //-     p(class='text-tip' id='preview-email' aria-live='polite') 
+    //-         | Current Email Address: 
+    //-     p(class='text-error' id='error-email')
+    //-     div(class='collection-wrapper')
+    //-         button(class='default' id='email-reveal') 
+    //-             | Reveal Email Address 
+    //-         button(class='default' id='email-edit') 
+    //-             | Edit Email Address 
+    //-         button(class='default' id='email-resend' hidden) 
+    //-             | Resend Verification Email
+    //-     div(class='divider-spacer')
+
+    //-     //- Password
+    //-     p(class='text-header') Password
+    //-     p(class='text-tip') Change your account password, doing so will sign you out on all other devices.
+    //-     button(class='default' id='password-change') 
+    //-         | Change Password
+    //-     div(class='divider-spacer')
+
+    //-     //- Multi-Factor
+    //-     p(class='text-header') Multi-Factor Authentication (MFA)
+    //-     p(class='text-tip') Use an Authenticator App to add an extra layer of security to your account.
+    //-     p(class='text-error' id='error-mfa')
+    //-     div(class='collection-wrapper')
+    //-         button(class='default' id='mfa-setup-start' hidden) 
+    //-             | Setup Authenticator App
+    //-         button(class='default destructive' id='mfa-setup-remove' hidden) 
+    //-             | Remove Authenticator App
+    //-         button(class='default' id='mfa-recovery-view' hidden) 
+    //-             | View Recovery Codes
+    //-         button(class='default destructive' id='mfa-recovery-regen' hidden) 
+    //-             | Generate New Codes
+    //-     div(class='divider-spacer')
+
+    //-     //- Account Deletion 
+    //-     div(class='divider-spacer')
+    //-     p(class='text-header') Danger Zone
+    //-     p(class='text-tip') Buttons that will cause major changes to your account.
+    //-     p(class='text-error' id='error-danger')
+    //-     button(class='default destructive' id='danger-deleteaccount')
+    //-         | Request Account Deletion
+
+    script(src='file://scripts/profile-security.ts')

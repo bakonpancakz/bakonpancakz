@@ -1,0 +1,108 @@
+<article
+    id="reference"
+    authorId=""
+    categoryId="api"
+    title="Reference"
+    created="100"
+    snippet="References for suzzy APIs and Services"
+    banner=""
+    noindex="false"
+>
+    <!-- Server URLs -->
+    <header>Sending Requests</header>
+    <text>
+        All requests to the api should be made to the following URL: <c>https://apis.suzzygames.com/v1/</c>
+    </text>
+
+    <!-- Server Ratelimiting -->
+    <header>Ratelimiting</header>
+    <text>
+        Each response will include headers related to ratelimiting, follow them otherwise
+        the server will automatically reject your request and respond with a
+        <c>429 Too Many Requests</c> error.
+    </text>
+    <table>
+        <row>
+            <column>Header</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>RateLimit-Limit</column>
+            <column>Request Quota</column>
+        </row>
+        <row>
+            <column>RateLimit-Remaining</column>
+            <column>Requests Remaining</column>
+        </row>
+        <row>
+            <column>RateLimit-Reset</column>
+            <column>Float seconds until Quota Resets</column>
+        </row>
+    </table>
+    <quote>
+        Sending too many bad requests too quickly will result in your IP Address 
+        being blocked temporarily.
+    </quote>
+    <quote>
+        Frequent abusers will get the ban hammer!
+    </quote>
+
+    <!-- User Assets -->
+    <header>Content URLs</header>
+    <text>
+        User Uploads <h>(Avatars, Banners, etc.)</h> are available at 
+        <c>https://content.suzzygames.com/</c> using the following paths:
+    </text>
+    <table>
+        <row>
+            <column>Name</column>
+            <column>Path</column>
+        </row>
+        <row>
+            <column>User Avatars</column>
+            <column>/avatars/{user.id}/{user.avatar}/{extension}/{size}</column>
+        </row>
+        <row>
+            <column>User Banners</column>
+            <column>/banners/{user.id}/{user.banner}/{extension}/{size}</column>
+        </row>
+    </table>
+    <quote>Image Sizes: Large (192px), Medium (96px), Small (48px)</quote>
+    <quote>Image Extensions: webp, png, gif (if animated)</quote>
+    <quote>Animated images will have their hash begin with "a_"</quote>
+
+    <!-- User Default Assets -->
+    <header>Default Assets</header>
+    <text>
+        Ocasionally users won't have uploaded an avatar, you can use the provided 
+        default ones by calculating the index with <c>index = {user.id} % 6</c> and using the follow URL:
+    </text>
+    <text>
+        <c>https://suzzygames.com/assets/images/default-user{index}.png</c>
+    </text>
+    <quote>Signed out users use "default-anon.png" instead</quote>
+
+    <subheader>Default Colors</subheader>
+    <text>
+        Default colors for user profiles are available below:
+    </text>
+    <table>
+        <row>
+            <column>Name</column>
+            <column>Color (Hex)</column>
+        </row>
+        <row>
+            <column>Profile Banner</column>
+            <column>#1D1E2E</column>
+        </row>
+        <row>
+            <column>Profile Background</column>
+            <column>#333550</column>
+        </row>
+        <row>
+            <column>Profile Border</column>
+            <column>#282A3F</column>
+        </row>
+    </table>
+
+</article>

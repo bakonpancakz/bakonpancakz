@@ -1,0 +1,110 @@
+-
+    // Create Sidebar Categories
+    const t = {}
+    for (const a of articles) {
+        const k = categories.find(c => c.id === a.category.id).name
+        t[k] ? t[k].push(a) : t[k] = [a]
+    }
+    // Sort Sidebar Articles
+    for (const v of Object.values(t)) {
+        v.sort((a, b) => parseInt(a.info.created) - parseInt(b.info.created))
+    }
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='icon' type='image/png' href='file://library/favicon.png')
+        link(rel='stylesheet' href='file://styles/template-global.css')
+        link(rel='stylesheet' href='file://styles/template-article.css')
+        link(rel='stylesheet' href='file://styles/browser-library.css')
+        link(rel='stylesheet' href='file://fonts/font-poppins.css')
+        meta(property='theme-color' content='#A1A8FF')
+        meta(property='og:image' content='file://library/logo-og.png?direct=true')
+        meta(property='og:title'       content=`library | ${relevantArticle.category.name} > ${relevantArticle.info.title}`)
+        meta(property='og:description' content=relevantArticle.info.snippet)
+        meta(name='description'        content=relevantArticle.info.snippet)
+        title library - #{relevantArticle.info.title} (#{relevantArticle.category.name})
+    body
+        div(class='wrapper-search')
+            div(class='container-search special-dropshadow')
+
+                div(class='search-actions')
+                    input(class='search-input' tabindex='-1' type='text' name='Search Library' placeholder='Search Library')
+                    button(class='search-close' tabindex='-1') &times;
+
+                div(class='search-body')
+                    //- Loading Icon
+                    div(class='pane' id='loading')
+                        img(src='file://icons/diagram-loading.svg' style='width: 64px;')
+                    
+                    //- Error Message
+                    div(class='pane' id='error')
+                        img(src='file://library/search/search-error.png')
+                        span I ran into an issue...
+                        p(class='text-tip text-muted') TypeError: Failed to Fetch
+                    
+                    //- First Open/Empty Query
+                    div(class='pane' id='help')
+                        img(src='file://library/search/search-initial.png')
+                        span Can't find something? Let me help you out!
+                        p(class='text-tip text-muted') start typing to begin our search
+                    
+                    //- Empty Results
+                    div(class='pane' id='empty')
+                        img(src='file://library/search/search-empty.png')
+                        span I couldn't find anything!
+                        p(class='text-tip text-muted') try again with some different keywords
+                    
+                    //- Some Results
+                    div(class='pane' id='results')
+
+                div(class='search-footer')
+                    p(class='text-tip text-muted')
+                    div(style='flex-basis: 100%;')
+                    p Close  #[span ESC]
+                    p Navigate #[span ⬆⬇]
+                    p Select #[span ↩] 
+                    
+
+        div(class='wrapper-layout')
+            div(class='layout-navigation background-scroll special-shadow')
+                //- Logo and Search Box 
+                a(class='navigation-button' id='skipper' href='#home') 
+                    | Skip to Content
+                a(href='/')
+                    img(
+                        class='navigation-logo'
+                        alt='Logo for suzzy games'
+                        src='file://library/logo-navigation.png'
+                    )
+                button(class='navigation-button' id='search-open') 
+                    | Search Library
+
+                //- Render Sidebar
+                each [categoryName, categoryArticles] of Object.entries(t)
+                    p(class='navigation-header') #{categoryName}
+                    each someArticle of categoryArticles
+                        - var thisLink = `${relevantArticle.category.id}/${relevantArticle.info.id}`
+                        - var someLink = `${someArticle.category.id}/${someArticle.info.id}`
+                        - var matchLink = (thisLink === someLink)
+                        a(class='navigation-link' href=`/library/${someLink}` active=matchLink)
+                            | #{someArticle.info.title}
+                            if matchLink
+                                each element of someArticle.elements
+                                    if element.type === 'header'
+                                        a(class='navigation-chapter' href=`#${formatString(element.value)}`)
+                                            | #{element.value}
+
+            div(class='layout-content' id='home')
+                //- Article Content
+                include ../_TemplateArticle
+
+                //- Mobile Users get a Return to Top Button
+                //- Also includes spacer so content doesn't cover button
+                div(class='layout-spacer')
+                a(class='default layout-return' href='#home') ▲
+
+    script(src='file://scripts/shared-article.ts')
+    script(src='file://scripts/browser-library.ts')

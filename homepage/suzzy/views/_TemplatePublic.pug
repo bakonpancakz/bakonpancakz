@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='icon' type='image/png' href='file://images/favicon.png')
+        link(rel='stylesheet' href='file://fonts/font-poppins.css')
+        link(rel='stylesheet' href='file://styles/template-global.css')
+        link(rel='stylesheet' href='file://styles/template-public.css')
+        link(rel='stylesheet' href='file://styles/template-modals.css')
+        meta(property='theme-color' content='#A1A8FF')
+        block pageHeader
+    body
+        //- Navigation Bar
+        div(class='wrapper-navigation')
+            div(class='container-navigation')
+                //- Left-Hand: Site Navigation
+                div(class='navigation-side' id='navigation-left')
+                    a(href="/" style="display:grid;" tabindex="0") 
+                        img(
+                            class='navigation-logo'
+                            src='file://images/public-logo.png'
+                            alt='Logo for suzzy games'
+                        )
+                    p(class='text-muted') &bull;
+                    a(class='text-link' href='/blog') Blog
+                    a(class='text-link' href='/library') Library
+                    a(class='text-link' href='/projects') Projects
+                //- Right-Hand: User & Site Status
+                div(class='navigation-side' id='navigation-right')
+                    a(class='special-shadow' id='navigation-status' href='https://status.suzzygames.com/' title='Server Status')
+                        div(id='status-dot' class='status-dot special-pulse')
+                        p(id='status-text' class='text-tip') Loading 
+                    a(id='navigation-profile' class='special-shadow' title='Manage Account')
+
+        //- Content Dividers
+        //- div.divider-navigation: Spacer for Navigation Bar on Desktop
+        //- div.divider-mobile:     Line Divider only present on Mobile
+        div(class='divider-navigation')
+        div(class='divider-line divider-mobile')
+
+        //- Escape Content Wrapper for elements that required the full width of the page
+        block pageEscaped
+
+        //- Wrapper for Page Content
+        div(class='wrapper-content')
+            block pageContent
+
+        //- Wrapper for Page Footer
+        div(class='wrapper-footer')
+            div(class='container-footer')
+                div(class='footer-links')
+                    a(class='footer-link' target='_blank' href='https://twitter.com/bakonpancakz' title='Twitter Account for bakonpancakz')
+                        img(src='file://images/brands/logo-x.png' alt='Logo for X')
+                    a(class='footer-link' target='_blank' href='https://discord.gg/invite/bvTCZavXUU' title='Discord Server for suzzy games')
+                        img(src='file://images/brands/logo-discord.png' alt='Logo for Discord')
+                    a(class='footer-link' target='_blank' href='https://www.roblox.com/groups/10781692' title='ROBLOX Group for suzzy games')
+                        img(src='file://images/brands/logo-roblox.png' alt='Logo for Roblox')
+                p(class='text-tip') 
+                    | © 2021-2024 suzzy games. All Rights Reserved.
+                a(class='text-tip text-muted' href='/challenge-picross' style='text-decoration: none;') 
+                    | Developed with ♡ by bakonpancakz
+
+    //- Page Scripts
+    script(src='file://scripts/shared-utils.ts')
+    script(src='file://scripts/shared-public.ts')

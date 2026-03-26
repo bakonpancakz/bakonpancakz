@@ -1,0 +1,71 @@
+{{ template "base.html" . }}
+
+{{ define "PageStyles" }}
+<link rel="stylesheet" href="/public/styles/blog_browser.css?v={{ .Version }}">
+<link rel="stylesheet" href="/public/styles/blog_article.css?v={{ .Version }}">
+{{ end }}
+
+{{ define "PageContent" }}
+
+<!-- Introduction & Disclaimer -->
+<div class="browser-introduction">
+    <p class="intro-header effect-rhombus-right">Welcome to my blog!</p>
+    <img class="intro-banner" src="/public/banner_blog.gif?v={{ .Version }}" alt="Blog Banner" width="520" height="292">
+    <p class="intro-paragraph">
+        This corner of the internet contains ramblings about random experiments
+        that more than likely occured on a bright sunday afternoon. Nothing here
+        is meant to be perfect, but I do hope to provide the odd spark of insight.
+        <br><br>
+        I assume no responsibility for bodily harm, wasted time, or raised eyebrows
+        that may result from consuming these articles. Enjoy in Moderation! Have fun!
+    </p>
+    <div class="element-divider"></div>
+    <div class="intro-dots">
+        <span class="effect-dot" style="--color: 94, 167, 1;"></span>
+        <p>Personal</p>
+        <span class="effect-dot" style="--color: 0, 167, 170;"></span>
+        <p>Update</p>
+        <span class="effect-dot" style="--color: 255, 0, 91;"></span>
+        <p>Guide</p>
+    </div>
+</div>
+
+<!-- Article List -->
+<div class="browser-content">
+
+    {{ range $.Articles }}
+    <a class="browser-item" href="/blog/{{ .Slug }}" style="--rgb-accent: {{ .Color }};">
+        <div class="item-background" style="--background: url('/public/articles/{{ .BaseResources }}/{{ .BaseBanner }}?v={{ $.Version }}');"></div>
+        <div class="item-foreground">
+            <p class="effect-rhombus-left effect-rhombus-animated">{{ .Title }}</p>
+            <div class="item-tags effect-chevron-container">
+                {{ range .Tags }}
+                <span class="effect-chevron-point-left">{{ . }}</span>
+                {{ end }}
+                <span class="effect-chevron-point-left">{{ .Date.Format "Jan 02 2006" }}</span>
+            </div>
+        </div>
+    </a>
+    {{ end }}
+
+</div>
+
+<!-- Fortune Cookie -->
+<div class="browser-footer">
+    <p id="browser-message">If you're reading this, you have JavaScript disabled. Paranoid much? :P</p>
+    <script>
+        const monitor = document.querySelector("p#browser-message")
+        const messages = [
+            "Did you eat something sweet today? Everybody deserves a sweet treat, especially you. :)",
+            "Make sure you clean your keyboard, it's amazingly disgusting what you can find in there.",
+            "Religion aside even God rested on the 7th day, are you treating yourself well?",
+            "If bored try learning about how your favorite Game Console OS works, or is that weird?",
+            "Your projects miss you... maybe poke around? You might rediscover something!",
+            "If somebody has done it before, you can too! And if they got close, you can get closer!",
+            "Bad Idea Counter -> {{ len .Articles }}",
+        ]
+        monitor.textContent = messages[Math.floor(Math.random() * messages.length)]
+    </script>
+</div>
+
+{{ end }}

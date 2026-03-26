@@ -24,5 +24,10 @@
     { "id": "roblox", "label": "ROBLOX", "color": "#3156ff" },
     { "id": "vercel", "label": "Vercel", "color": "#000000" },
     { "id": "vulkan", "label": "Vulkan", "color": "#a41e22" },
-    { "id": "c", "label": "C", "color": "#596fc5" }
+    { "id": "c", "label": "C", "color": "#596fc5" },
+    { "id": "caddy", "label": "Caddy", "color": "#0090dd" },
+    { "id": "onnx", "label": "ONNX", "color": "#0071bc" },
+    { "id": "hetzner", "label": "Hetzner", "color": "#d50c2d" },
+    { "id": "backblaze", "label": "Backblaze", "color": "#e20626" },
+    { "id": "ffmpeg", "label": "FFmpeg", "color": "#388e3c" }
 ]

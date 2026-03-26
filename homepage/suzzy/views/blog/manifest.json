@@ -1,0 +1,26 @@
+{
+    "itemsPerPage": 8,
+    "authors": [
+        {
+            "id": "bakonpancakz",
+            "name": "bakonpancakz",
+            "icon": "file://blog/author-bakonpancakz.png"
+        }
+    ],
+    "categories": [
+        {
+            "id": "behind-the-scenes",
+            "name": "Behind The Scenes",
+            "icon": "file://blog/category-bts.png"
+        },
+        {
+            "id": "project-monke",
+            "name": "Project Monke",
+            "icon": "file://blog/category-pm.png"
+        }
+    ],
+    "articles": [
+        "04.17.24.Hello World.xml",
+        "05.03.24.Repo of Knowledge.xml"
+    ]
+}

@@ -1,0 +1,27 @@
+<article
+    id="welcome"
+    authorId=""
+    categoryId="home"
+    title="Welcome"
+    created="100"
+    snippet="Welcome to the suzzy Library!"
+    banner=""
+    noindex="true"
+>
+    <banner resource="file://library/introduction/banner-welcome.png" alt="Welcome Banner" />
+    <subheader>Welcome to the library!</subheader>
+    <text>
+        This site contains documentation and guides intended for developers.
+        You can navigate the website using the links on the side. <h>Or above if you're on mobile!</h>
+    </text>
+
+    <subheader>Heads up!</subheader>
+    <text>
+        Documentation and features are still early in development, you may occasionally
+        encounter an unexpected <c>500 Internal Server Error</c> or find a random typo.
+    </text>
+    <text>
+        Please send bug reports or feature requests to 
+        <a href="mailto:bakonpancakz@gmail.com">bakonpancakz@gmail.com</a>
+    </text>
+</article>

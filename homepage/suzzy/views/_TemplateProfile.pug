@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='icon' type='image/png' href='file://images/favicon.png')
+        link(rel='stylesheet' href='file://fonts/font-poppins.css')
+        link(rel='stylesheet' href='file://styles/template-global.css')
+        link(rel='stylesheet' href='file://styles/template-modals.css')
+        link(rel='stylesheet' href='file://styles/template-profile.css')
+        meta(property='theme-color' content='#A1A8FF')
+        block pageHeader
+    body
+        noscript
+            style.
+                noscript div {
+                    position: absolute;
+                    width: 100%; 
+                    height: 100%;
+                    display: grid;
+                    justify-items: center; 
+                    align-content: center;
+                    text-align: center;
+                }
+                noscript p {
+                    padding: 24px;
+                    box-sizing: border-box;
+                }
+                div.wrapper-layout {
+                    display: none;
+                }
+            div
+                p This webpage requires JavaScript to be enabled.
+                a(href='/') Go to Homepage
+
+        div(class='wrapper-layout')
+            div(class='wrapper-navigation')
+                - var PAGE = filename.split('\\').at(-1).split('.').at(0)
+                a(href='/')
+                    img(class='navigation-logo' src='file://images/public-logo.png' alt='Logo for suzzy games')
+                a(active=(PAGE === 'index') class='navigation-link' href='/profile')
+                    img(src='file://icons/icon-user.svg' alt='Icon for Profile')
+                    span Profile
+                a(active=(PAGE === 'security') class='navigation-link' href='/profile/security')
+                    img(src='file://icons/icon-lock.svg' alt='Icon for Security')
+                    span Security
+                a(active=(PAGE === 'devices') class='navigation-link' href='/profile/devices')
+                    img(src='file://icons/icon-mobile.svg' alt='Icon for Devices')
+                    span Devices
+                a(active=(PAGE === 'connections') class='navigation-link' href='/profile/connections')
+                    img(src='file://icons/icon-plug.svg' alt='Icon for Connections')
+                    span Connections
+                a(active=(PAGE === 'applications') class='navigation-link' href='/profile/applications')
+                    img(src='file://icons/icon-app.svg' alt='Icon for Applications')
+                    span Applications
+
+                div(class='divider-line')
+                a(class='navigation-link' href='/profile/redeem')
+                    img(src='file://icons/icon-star.svg' alt='Icon for Redeem Code')
+                    span Redeem Code
+                a(class='navigation-link' href='/')
+                    img(src='file://icons/icon-exit.svg' alt='Icon for Sign Out')
+                    span Sign Out
+
+            div(class='wrapper-content')
+                block pageContent
+
+        script(src='file://scripts/shared-utils.ts')

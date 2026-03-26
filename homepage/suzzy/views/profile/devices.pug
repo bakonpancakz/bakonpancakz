@@ -1,0 +1,30 @@
+extends ../_TemplateProfile
+block pageHeader
+    title suzzy - Manage Devices
+block pageContent 
+    - var loading_message = 'Devices'
+    - var empty_message   = 'No Devices'
+    - var empty_source    = 'file://icons/icon-app-none.svg'
+    - var empty_alt       = 'Devices'
+    p(class='text-hero') Devices
+    p(class='text-tip') Here's a list of devices that are currently logged in with your account.
+    p(class='text-tip') If you see a device you don't recognize, log it out and change your password immediately.
+    div(class='collection-divider')
+    include ../_TemplateProfilePage
+
+        //- //- Template Item
+        //- div(class='item-device collection-item special-shadow' id='device-template' hidden)
+        //-     div(class='device-icon')
+        //-         img(aria-hidden='true' src='/assets/images/icons/icon-desktop.svg' alt='Icon for Desktop')
+        //-     div(class='device-info')
+        //-         div(class='info-alongside')
+        //-             p(id='browser') Chrome on Windows 10 
+        //-             p(id='me' class='text-tip text-muted' hidden) (This Device)
+        //-         div(class='info-alongside')
+        //-             p(id='location') Modesto, United States
+        //-             p(id='lastseen' class='text-tip text-muted') 3 hours ago
+        //-         p(class='text-error' id='error-message')
+        //-     button(class='device-action')
+        //-         img(src='/assets/images/icons/icon-cross.svg' alt='Icon for Cross')
+
+    script(src='file://scripts/profile-devices.ts')

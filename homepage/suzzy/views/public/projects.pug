@@ -1,0 +1,105 @@
+extends ../_TemplatePublic
+block pageHeader
+    link(rel='stylesheet' href='file://styles/public-projects.css')
+    meta(property='og:title' content='suzzy games - projects')
+    meta(property='og:description' content='Projects from over the years.')
+    meta(name='description' content='Projects from over the years.')
+    meta(property='og:image' content='https://suzzygames.com/assets/images/og-logo.png')
+    title suzzy games - projects
+block pageEscaped
+    -
+        const PROJECT_MANIFEST = [
+            {
+                accent: '#ff9d2f',
+                brightness: 0.75,
+                background: 'file://projects/monke/background.jpeg',
+                name: 'Project Monke',
+                state: 'In Development',
+                platforms: ['desktop', 'mobile'],
+                images: [
+                    { label: 'Promo Banner', url: 'file://projects/monke/image-1.jpeg' },
+                ],
+                description: [
+                    'Can only be explained as Super Monkey Ball and Super Mario Maker in one.',
+                    'Check the blog for news!',
+                ],
+                actions: [
+                    { label: 'View Blog Posts', url: '/blog/project-monke', target: '' },
+                ],
+            },
+            {
+                accent: '#91defd',
+                brightness: 0.75,
+                name: 'Cart Ride Around a Fumo',
+                background: 'file://projects/craf/background.jpeg',
+                platforms: ['desktop', 'mobile'],
+                state: '2021',
+                images: [
+                    { label: 'Promo Artwork #1', url: 'file://projects/craf/image-1.jpeg' },
+                    { label: 'Promo Artwork #2', url: 'file://projects/craf/image-2.jpeg' },
+                ],
+                description: [
+                    'My own spin on the classic ROBLOX cart ride genre.',
+                    'Centered around fumos for no specific reason.',
+                    'Warning: Contains explosions',
+                ],
+                actions: [
+                    { label: 'Play on ROBLOX', url: 'https://www.roblox.com/games/9987852646/Cart-Ride-Around-a-Fumo', target: '_blank' },
+                ],
+            }
+        ]
+
+    //- Layout: Header
+    div(class='wrapper-widget-hero')
+        div(class='widget-hero')
+            p(class='text-hero') > Projects <
+            p All of my projects in reverse chronological order (a.k.a. new to old)
+
+    //- Layout: Projects
+    each p in PROJECT_MANIFEST
+        div(class='widget widget-project' style=`--accent: ${p.accent}; --brightness: ${p.brightness}; --background: url('${p.background}');`)
+
+            //- Stack div elements with background underneath the foreground
+            //- Image will be darkened using 'brightness' css variable
+            div(class='project-background')
+            div(class='project-foreground')
+
+                //- Project: Metadata
+                div(class='project-content')
+
+                    //- Name, Platforms, Descriptions 
+                    div(class='project-info')
+                        div(class='project-header')
+                            p(class='text-header') #{p.name}
+                            div(class='project-platforms')
+                                if p.platforms.find(p => p === 'desktop')
+                                    img(class='platform-icon' alt='Icon for Desktop Devices' src='file://icons/icon-computer.svg')
+                                if p.platforms.find(p => p === 'mobile')
+                                    img(class='platform-icon' alt='Icon for Mobile Devices' src='file://icons/icon-mobile.svg')
+                                p &bull; #{p.state}
+
+                        div(class='divider-line' style='background-color: var(--accent);')
+                        div(class='project-description')
+                            each s in p.description
+                                p #{s}
+
+                    //- Screenshots
+                    div(class='project-gallery')
+                        div(class='project-gallery-upper')
+                            button(class='project-gallery-button' id='last') <
+                            div(class='project-gallery-scroll')
+                                each i in p.images
+                                    img(class='gallery-image' alt=`${p.name} - ${i.label}` src=i.url)
+                            button(class='project-gallery-button' id='next') >
+
+                div(class='project-content project-lower')
+                    div(class='project-actions')
+                        each a in p.actions
+                            a(class='default wide' target=a.target href=a.url) #{a.label}
+
+                    //- Screenshot Gallery Controls
+                    div(class='project-gallery-actions')
+                        each _, i in p.images
+                            div(class=`gallery-dot${i===0 ? ' gallery-dot-active' : ''}`)
+
+    script(src='file://scripts/public-projects.ts')

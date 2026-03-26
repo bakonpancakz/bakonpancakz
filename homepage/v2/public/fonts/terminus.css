@@ -1,0 +1,33 @@
+/* Terminus Regular */
+@font-face {
+    font-family: 'Terminus';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/public/fonts/terminus/TerminusRegular.woff2);
+}
+
+@font-face {
+    font-family: 'Terminus';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/public/fonts/terminus/TerminusItalic.woff2);
+}
+
+/* Terminus Bold */
+@font-face {
+    font-family: 'Terminus';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/public/fonts/terminus/TerminusBold.woff2);
+}
+
+@font-face {
+    font-family: 'Terminus';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/public/fonts/terminus/TerminusBoldItalic.woff2);
+}

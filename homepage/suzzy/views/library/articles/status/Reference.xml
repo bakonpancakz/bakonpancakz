@@ -1,0 +1,310 @@
+<article
+    id="reference"
+    authorId=""
+    categoryId="status"
+    title="Reference"
+    created="0"
+    snippet=""
+    banner=""
+    noindex="false"
+>
+    <!-- Server URLs -->
+    <header>Sending Requests</header>
+    <text>
+        All requests to the <b>Status Service</b> should be made to the following URL:
+        <c>https://status.suzzygames.com/api/</c>
+    </text>
+    
+    <header>Automatic Refreshing</header>
+    <text>
+        This service updates the <a href="/library/status/endpoints#fetch-widget">widget</a> 
+        and <a href="/library/status/endpoints#fetch-status">status</a> endpoints
+        every minute.
+    </text>
+    <text>
+        You can use the <c>X-Refresh</c> header to calculate how many float seconds 
+        your client should wait before attempting to make another request.
+    </text>
+    <text>
+        This service also returns a <c>ETag</c> header which you can optionally include
+        in the next request. If nothing has changed the service will respond with a 
+        <c>304 Not Modified</c> and an <b>empty body</b>.
+    </text>
+    <code syntax="yml">
+X-Refresh: 12.73    # Seconds until next refresh
+ETag: 1735594572    # Unique Cache Identifier
+    </code>
+    <quote>
+        Note: The 'X-Refresh' header is randomly offset up to 5 seconds to
+        help mitigate the sudden spike in traffic.
+    </quote>
+
+    <header>Service Unavailable</header>
+    <text>
+        On rare occasions the Service may return a <c>503 Service Unavailable</c>
+        error. This happens when the service has just restarted <h>(usually due to an update)</h>
+        and is doing some digital housekeeping  before preparing the <a href="/library/status/endpoints#fetch-widget">widget</a> 
+        and <a href="/library/status/endpoints#fetch-status">status</a> endpoints.
+    </text>
+    <text>
+        The error will however return the <c>X-Refresh</c> header and the
+        aforementioned endpoints should become available then.
+    </text>
+    <quote>
+        Note: The status service always returns an empty body when an error occurs.
+        Your client should not attempt to parse any JSON.
+    </quote>
+
+    <header>About Trackers</header>
+
+    <subheader>Tracker Object</subheader>
+    <text>
+        All trackers share the same base fields, but some fields are only 
+        included for their respective types. 
+    </text>
+    <text>
+        <b>Charts</b> take in values from multiple servers and average them
+        every specified interval compiling it into a <a href="#chart-data-point">Data Point</a>. 
+        Charts return the <c>interval</c>, <c>history</c>, and <c>history_length</c> fields.
+    </text>
+    <text>
+        <b>Counters</b> take in individual numbers from multiple servers and accumulate 
+        them together as one number. Counters return the <c>value</c> field.
+    </text>
+    <text>
+        <b>Services</b> keep track of multiple servers to ensure they're healthy and operational.
+        If the health check fails their status is changed to either <b>degraded</b> or <b>down</b>
+        generating an event and alerting an engineer.
+        Services return the <c>status</c> field.
+    </text>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>id</column>
+            <column>string</column>
+            <column>Unique Tracker Identifier</column>
+        </row>
+        <row>
+            <column>public</column>
+            <column>boolean</column>
+            <column>Is this tracker public? (Internal)</column>
+        </row>
+        <row>
+            <column>ephemeral</column>
+            <column>boolean</column>
+            <column>Clear tracker data on startup? (Internal)</column>
+        </row>
+        <row>
+            <column>name</column>
+            <column>string</column>
+            <column>User-Friendly name for this tracker</column>
+        </row>
+        <row>
+            <column>description</column>
+            <column>string</column>
+            <column>Description that appears when mouse is hovered over</column>
+        </row>
+        <row>
+            <column>tags</column>
+            <column>Array&lt;string&gt;</column>
+            <column>Strings used to categorize this tracker</column>
+        </row>
+        <row>
+            <column>type</column>
+            <column>integer</column>
+            <column>The Type of Tracker</column>
+        </row>
+        <row>
+            <column>value</column>
+            <column>integer?</column>
+            <column>COUNTER: Current Tracker Value</column>
+        </row>
+        <row>
+            <column>status</column>
+            <column>integer?</column>
+            <column>SERVICE: Current Service Status</column>
+        </row>
+        <row>
+            <column>interval</column>
+            <column>integer?</column>
+            <column>CHART: Data Point Interval</column>
+        </row>
+        <row>
+            <column>history_length</column>
+            <column>integer?</column>
+            <column>CHART: Data Point History Length</column>
+        </row>
+        <row>
+            <column>history</column>
+            <column>Array&lt;DataPoint&gt;?</column>
+            <column>CHART: Data Point History</column>
+        </row>
+    </table>
+    
+    <subheader>Tracker Types</subheader>
+    <table>
+        <row>
+            <column>Enum</column>
+            <column>Value</column>
+        </row>
+        <row>
+            <column>COUNTER</column>
+            <column>1</column>
+        </row>
+        <row>
+            <column>CHART</column>
+            <column>2</column>
+        </row>
+        <row>
+            <column>SERVICE</column>
+            <column>3</column>
+        </row>
+    </table>
+
+    <subheader>Service Status</subheader>
+    <table>
+        <row>
+            <column>Enum</column>
+            <column>Value</column>
+        </row>
+        <row>
+            <column>HEALTHY</column>
+            <column>0</column>
+        </row>
+        <row>
+            <column>DEGRADED</column>
+            <column>1</column>
+        </row>
+        <row>
+            <column>DOWN</column>
+            <column>2</column>
+        </row>
+    </table>
+
+    <subheader>Chart Data Point</subheader>
+    <text>
+        <b>Data Points</b> are Arrays that contain two integers.
+        The first integer is a timestamp for when the service compiled
+        the data into a point and can be converted into a UNIX Timestamp with
+        <c>TIMESTAMP * (INTERVAL * 60) * 1000</c>. The second integer is the
+        calculated average value.
+    </text>
+    <text>
+        You can then reverse iterate over the <a href="#tracker-object">trackers history field</a> 
+        to plot the values on a line chart.
+    </text>
+    <table>
+        <row>
+            <column>Index</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>0</column>
+            <column>integer</column>
+            <column>Data Timestamp</column>
+        </row>
+        <row>
+            <column>1</column>
+            <column>integer</column>
+            <column>Data Value</column>
+        </row>
+    </table>
+
+    <header>About Events</header>
+    <subheader>Event Object</subheader>
+    <text>
+        Events are generated when downtime is detected or for when downtime is 
+        scheduled. They include <b>"helpful"</b> messages either generated by 
+        the service itself or personally written by an engineer.
+    </text>
+    <table>
+        <row>
+            <column>field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>id</column>
+            <column>string</column>
+            <column>Unique Event Identifier</column>
+        </row>
+        <row>
+            <column>type</column>
+            <column>integer</column>
+            <column>Event Type</column>
+        </row>
+        <row>
+            <column>affects</column>
+            <column>string</column>
+            <column>The ID of Tracker this event pertains to</column>
+        </row>
+        <row>
+            <column>occurred</column>
+            <column>ISO Timestamp</column>
+            <column>When this event began</column>
+        </row>
+        <row>
+            <column>resolved</column>
+            <column>ISO Timestamp?</column>
+            <column>When this event was resolved</column>
+        </row>
+        <row>
+            <column>messages</column>
+            <column>Array&lt;Message&gt;</column>
+            <column>List of Message Objects (Unsorted)</column>
+        </row>
+    </table>
+
+    <subheader>Event Types</subheader>
+    <table>
+        <row>
+            <column>Enum</column>
+            <column>Value</column>
+        </row>
+        <row>
+            <column>DEGREDATION</column>
+            <column>0</column>
+        </row>
+        <row>
+            <column>DOWNTIME</column>
+            <column>1</column>
+        </row>
+        <row>
+            <column>MAINTENANCE</column>
+            <column>2</column>
+        </row>
+    </table>
+    <quote>Their respective Hex Colors: #f1c40f, #ff005b, #6cc0e0</quote>
+
+    <subheader>Message Object</subheader>
+    <text>
+        These message contain HTML Content. Which usually only use the
+        standard text formatting tags <c>&lt;b&gt; &lt;s&gt; &lt;i&gt;</c>.
+    </text>
+    <text>
+        <a target="_blank" href="">They may also occasionally include an image tag.</a>
+    </text>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>created</column>
+            <column>ISO Timestamp</column>
+            <column>When this message was written</column>
+        </row>
+        <row>
+            <column>message</column>
+            <column>string</column>
+            <column>HTML Content</column>
+        </row>
+    </table>
+
+</article>

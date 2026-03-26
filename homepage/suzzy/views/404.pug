@@ -1,0 +1,16 @@
+extends _TemplateSpecial
+block pageHeader
+    meta(name='robots' content='noindex')
+    title suzzy - Page Not Found (404)
+block pageContent
+    //- User Message
+    img(class='special-banner' src='file:///images/public-nopage.png')
+    p(class='text-header') Page Not Found
+    p(class='text-tip') Should've made a left instead of a right...
+    
+    //- User Actions
+    div(class='divider-line')
+    div(class='special-alongside')
+        a(class='default' href='/') Homepage
+        a(class='default' href='javascript:window.history.back()') Go Back
+        

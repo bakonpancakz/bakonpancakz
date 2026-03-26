@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "@suzzy/site",
+  "main": "source/service.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node ./dist/service.js",
+    "preview": "npx tsc && set NODE_ENV=production && node ./dist/service.js",
+    "dev": "npx tsc && node ./dist/service.js"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "express": "^4.21.2",
+    "highlight.js": "^11.11.1",
+    "node-html-parser": "^6.1.13",
+    "pug": "^3.0.3",
+    "sharp": "^0.33.5",
+    "uglify-js": "^3.19.3"
+  },
+  "devDependencies": {
+    "@types/clean-css": "^4.2.11",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "@types/pug": "^2.0.10",
+    "@types/uglify-js": "^3.17.5",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.9.3"
+  }
+}

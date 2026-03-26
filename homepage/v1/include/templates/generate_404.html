@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Page Not Found</title>
+    <style>
+        :root{
+            --color: {{ .Site.Color }};
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+        }
+
+        a,
+        p {
+            font-family: "MS Gothic", monospace;
+            line-height: 16px;
+        }
+
+        p {
+            color: #f0f0f0;
+            margin: 4px 0;
+        }
+
+        a,
+        a:visited {
+            color: rgba(var(--color), 1);
+            display: inline-block;
+            text-align: center;
+            width: 50%;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus-visible {
+            text-decoration: underline;
+            outline: none;
+        }
+
+        div {
+            width: 200px;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>404: Page Not Found </p>
+        <br>
+        <p>.-.</p>
+        <br>
+        <a href="javascript:window.history.back()">Go Back</a><a href="/">Homepage</a>
+    </div>
+    <script>
+        // Note: In MS Gothic, backslash shows as ¥ on Windows
+        const catalog = [
+            ".(^Д^)/", "(・.・)", "(°Δ°)b", "(・_・)", "(^_^)", "(>_<)",
+            "(o^^)o", "(;-;)", ".(≧o≦)/", "(o_o)", "(^-^*)", "(='X'=)",
+            "(￣へ￣)", "(★ω★)", "ᓚᘏᗢ", "✿◠‿◠", "(●'◡'●)", "◑﹏◐"
+        ];
+        const kaomoji = catalog[Math.floor(Math.random() * catalog.length)];
+        document.querySelectorAll("p")[1].textContent = kaomoji;
+    </script>
+</body>
+
+</html>

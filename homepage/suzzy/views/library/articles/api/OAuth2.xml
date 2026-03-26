@@ -1,0 +1,155 @@
+<article
+    id="oauth2"
+    authorId=""
+    categoryId="api"
+    title="OAuth2"
+    created="400"
+    snippet="Developer documentation for OAuth2"
+    banner=""
+    noindex="false"
+>
+    <header>Resources</header>
+    <text>
+        suzzy games provides support for OAuth2 allowing applications to 
+        use the API for authorization and retrieval of user data.
+    </text>
+    <text>
+        It is recommended you
+        <a href="/library/api/tutorials#creating-an-application">Create an Application</a>
+        and store the given
+        <c>CLIENT_ID</c> and
+        <c>CLIENT_SECRET</c> for later use.
+    </text>
+    <subheader>OAuth2 URLs</subheader>
+    <table>
+        <row>
+            <column>URL</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>https://suzzygames.com/oauth2</column>
+            <column>Base Authorization URL</column>
+        </row>
+        <row>
+            <column>https://apis.suzzygames.com/v1/oauth2/token</column>
+            <column>Token URL</column>
+        </row>
+        <row>
+            <column>https://apis.suzzygames.com/v1/oauth2/token/revoke</column>
+            <column>Token Revocation URL</column>
+        </row>
+    </table>
+    <quote>These endpoints will only accept the content type "application/x-www-form-urlencoded"</quote>
+    <subheader>OAuth2 Scopes</subheader>
+    <text>
+        A list of available scopes, some endpoints will return fields with a
+        <c>null</c> value or return an error if a required scope is unavailable.
+    </text>
+    <table>
+        <row>
+            <column>Name</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>identify</column>
+            <column>Allows access to /users/@me endpoint</column>
+        </row>
+        <row>
+            <column>email</column>
+            <column>Allows /users/@me endpoint to return the user's email</column>
+        </row>
+        <row>
+            <column>connections</column>
+            <column>Allows access to /users/@me/applications endpoint</column>
+        </row>
+    </table>
+
+    <!-- OAuth2 User Flow -->
+    <header>Authorization Code Grant</header>
+    <text>
+        This is most commonly known as <b>standard OAuth2</b>, where the user 
+        follows an Authorization Flow in return for an access code which the
+        application can exchange for the user's access token.
+    </text>
+    <quote>
+        All endpoints expect HTTP Basic Auth using your applications
+        CLIENT_ID as the username and CLIENT_SECRET as the password
+    </quote>
+
+    <subheader>Example Authorization URL</subheader>
+    <code syntax="skip">
+https://suzzygames.com/oauth2?response_type=code&amp;redirect_uri=https%3A%2F%2Fexample.org&amp;client_id=1273&amp;redirect_uri=https%3A%2F%2Fexample.org&amp;scope=identify%20email&amp;state=1734831153572
+    </code>
+    <text>- <c>response_type</c> must always be code, as it is currently the only supported type.</text>
+    <text>- <c>redirect_uri</c> is one of the Redirect URIs set in your application settings, url encoded.</text>
+    <text>- <c>client_id</c> is your Application ID. </text>
+    <text>- <c>scope</c> is a list of <a href="#oauth2-scopes">OAuth2 Scopes</a> delimited by url encoded spaces <c>(%20)</c>.</text>
+    <text>- <c>state</c> is a unique string that will be returned if set.</text>
+
+    <subheader>Example Redirect URL</subheader>
+    <code syntax="skip">
+https://example.org?code=9AED9A46641F3E3F489523C643C177BB.oboQpOkOSQJvdYYa4WuPq8J3TaYqNgylfq97sa99DRk&amp;state=1734831153572
+    </code>
+    <text>
+        The <c>code</c> can now be exchanged for a user's access token by 
+        making a POST request to the <a href="#oauth2-urls">Token URL</a>
+        with the following parameters:
+    </text>
+    <text>- <c>code</c> - parameter taken from the query string</text>
+    <text>- <c>grant_type</c> - value must be <c>authorization_code</c></text>
+    <text>- <c>redirect_uri</c> - the <c>redirect_uri</c> from the authorization url</text>
+    <text>In response you will be bestowed an <a href="#access-token-response">Access Token Response</a></text>
+
+    <subheader>Access Token Response</subheader>
+    <table>
+        <row>
+            <column>Name</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>access_token</column>
+            <column>string</column>
+            <column>Token to include in authorization header</column>
+        </row>
+        <row>
+            <column>token_type</column>
+            <column>string</column>
+            <column>String to prepend to token in authorization header</column>
+        </row>
+        <row>
+            <column>expires_in</column>
+            <column>number</column>
+            <column>Seconds until access token expires</column>
+        </row>
+        <row>
+            <column>refresh_token</column>
+            <column>string</column>
+            <column>Token to submit when making a refresh request</column>
+        </row>
+        <row>
+            <column>scope</column>
+            <column>string</column>
+            <column>The relevant OAuth2 Scopes for this token (delimited with a space)</column>
+        </row>
+    </table>
+
+    <subheader>Refreshing Access Token</subheader>
+    <text>
+        Once an access token has expired you may refresh it by making a 
+        POST request to the <a href="#oauth2-urls">Token URL</a> with 
+        the following parameters: 
+    </text>
+    <text>- <c>grant_type</c> - value must be <c>refresh_token</c></text>
+    <text>- <c>refresh_token</c> - the user's refresh token</text>
+    <text>In response you will be bestowed a fresh <a href="#access-token-response">Access Token Response</a></text>
+
+    <subheader>Revoking Access Token</subheader>
+    <text>
+        You can revoke an access token by making a POST request to the 
+        <a href="#oauth2-urls">Token Revocation URL</a> with the following
+        parameters:
+    </text>
+    <text>- <c>token</c> - the user's access token or refresh token</text>
+
+</article>

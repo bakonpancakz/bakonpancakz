@@ -1,0 +1,43 @@
+div.widget {
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+/* Widget: Hero */
+div.widget-hero-wrapper {
+    width: 100%;
+    height: 100vh;
+    margin-top: -56px;
+    padding-top: 56px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+div.widget-hero {
+    max-width: 1024px;
+    width: 100%;
+    margin: auto;
+    background: url('file://images/background-home.png') no-repeat center right;
+}
+
+div.widget-hero a {
+    color: var(--background-layer-0);
+}
+
+/* Mobile Styling */
+@media (max-width: 640px) {
+
+    div.widget-hero {
+        padding: 16px;
+    }
+
+    a.game-item {
+        flex-basis: 100%;
+    }
+
+    div.widget-hero-wrapper {
+        padding: 0;
+        margin: 0;
+        height: fit-content;
+    }
+}

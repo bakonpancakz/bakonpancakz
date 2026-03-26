@@ -1,0 +1,23 @@
+<article
+    id="changelog"
+    authorId=""
+    categoryId="api"
+    title="Changelog"
+    created="-1"
+    snippet="Changelog for suzzy APIs and Services"
+    banner=""
+    noindex="false"
+>
+    <header>Notices</header>
+    <text>Important and Breaking changes will be listed below:</text>
+    <list>
+        <item>Nothing to report!</item>
+    </list>
+    <header>History</header>
+    <subheader>Initial Release</subheader>
+    <quote>Date: May 12th 2024</quote>
+    <list>
+        <item>Applications are now generally available</item>
+        <item>suzzy Library now available</item>
+    </list>
+</article>

@@ -1,0 +1,28 @@
+{
+    "site": {
+        "host": "https://panca.kz",
+        "name": "pancakz",
+        "description": "Tech, Chunibyo \u0026 Other Delusions",
+        "category": "Personal Blogs",
+        "locale": "en-US",
+        "owner": "bakonpancakz",
+        "color": "77, 88, 255"
+    },
+    "articles": [
+        {
+            "base_template": "001-personal-email-server.html",
+            "base_resources": "setting-up-an-email-api",
+            "base_banner": "banner.gif",
+            "color": "94, 167, 1",
+            "slug": "setting-up-an-email-api",
+            "date": "2024-11-06T19:26:40Z",
+            "title": "Setting Up an Email API",
+            "description": "Freaking emails, how do they work?",
+            "author": "bakonpancakz",
+            "tags": [
+                "PERSONAL",
+                "GO"
+            ]
+        }
+    ]
+}

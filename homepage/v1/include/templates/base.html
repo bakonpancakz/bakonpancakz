@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="{{ .Site.Color }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A small corner of the web for odd tech experiments and the occasional questionable idea. Enjoy in moderation!">
+    <link rel="stylesheet" href="/public/styles/default.css?v={{ .Version }}">
+    <link rel="stylesheet" href="/public/styles/font_poppins.css?v={{ .Version }}">
+    {{ block "PageStyles" . }}{{ end }}
+    <title>{{ .Title }} - {{ .Site.Name }}</title>
+    <meta property="og:locale" content="{{ .Site.Locale }}">
+    {{ block "PageHead" . }}{{ end }}
+</head>
+
+<body style="--rgb-accent: {{ if .Article }}{{ .Article.Color }}{{ else }}{{ .Site.Color }}{{ end }}">
+    <div class="layout-wrapper">
+
+        <!-- Navigation -->
+        <div class="layout-navigation effect-caution">
+            <div class="navigation-header">
+                <a class="navigation-title effect-docked" href="/">{{ .Site.Name }}</a>
+                <p class="navigation-description">{{ .Site.Description }}</p>
+            </div>
+            <div class="navigation-links" style="--background: url('/public/anchors.gif?v={{ .Version}}');">
+                <a style="background-position-y: 0%;" class="navigation-item" href="/blog">Blog</a>
+                <a style="background-position-y: 50%;" class="navigation-item" href="http://git.panca.kz/">Codebase</a>
+                <a style="background-position-y: 100%;" class="navigation-item" href="http://stickers.panca.kz/">Stickerboard</a>
+            </div>
+            <div class="navigation-content">
+                {{ block "NavContent" . }}{{ end }}
+            </div>
+            <div class="navigation-footer">
+                <a class="footer-item" href="/rss.xml">RSS</a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="layout-content effect-caution">
+            {{ block "PageContent" . }}{{ end }}
+        </div>
+
+    </div>
+    {{ block "PageBody" . }}{{ end }}
+</body>
+
+</html>

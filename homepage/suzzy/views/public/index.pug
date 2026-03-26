@@ -1,0 +1,28 @@
+extends ../_TemplatePublic
+block pageHeader
+    link(rel='stylesheet'           href=`file://styles/public-homepage.css`)
+    meta(property='og:title'        content='suzzy games')
+    meta(property='og:description'  content='The official suzzy games website.')
+    meta(name='description'         content='The official suzzy games website.')
+    meta(property='og:image'        content='file://images/public-logo-og.png')
+    title suzzy games
+block pageEscaped
+    //- Widget: Hero
+    div(class='widget widget-hero-wrapper')
+        div(class='widget-hero')
+            p(class='text-hero') Welcome!
+            p 
+                | suzzy games is a personal project from the mind of 
+                | #[a(target='_blank' href='https://twitter.com/bakonpancakz') bakonpancakz]
+            i
+                p(class='text-muted text-tip') ❝There is no theme, there is no incentive, just pure passion and efficient code❞
+            div(class='divider-spacer')
+            p All projects are stuck in development hell until they suddenly aren't
+            i
+                p(class='text-tip') 
+                    | Check out the #[a(class='text-tip' href='/blog') blog] to see what im up to 
+                    | or play some old #[a(class='text-tip' href='/projects') projects]
+            div(class='divider-spacer')
+            p(class='text-tip text-muted' id='birthday') 
+                | Active since May 13th, 2021
+    script(src='file://scripts/public-homepage.ts')

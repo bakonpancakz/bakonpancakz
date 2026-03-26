@@ -1,0 +1,64 @@
+<article
+    id="branding"
+    authorId=""
+    categoryId="home"
+    title="Branding"
+    created="200"
+    snippet="Branding Guidelines for suzzy games"
+    banner=""
+    noindex="true"
+>
+    <!-- Guidelines -->
+    <header>Usage</header>
+    <text> 
+        This page contains high quality versions of promotional assets from most 
+        suzzy projects and games. Please use common sense and don't hesistate to
+        <a href="mailto:bakonpancakz@suzzygames.com">contact me</a> if you have any 
+        questions.
+    </text>
+    <text>
+        <b>Do not use these assets commercially or for impersonation.</b>
+    </text>
+    <quote>Hint: You can click on any image to download it to your device.</quote>
+
+    <!-- Product: suzzy games -->
+    <header>suzzy games</header>
+    <beanie alt="suzzy games Logo" resource="file://library/branding/suzzy-logo.png?preset=branding" />
+    <beanie alt="suzzy games Icon" resource="file://library/branding/suzzy-icon.png?preset=branding" />
+    <quote>Trivia: The name for our ghost mascot is Boo! You can find them in the logo.</quote>
+    <quote>Trivia: The accent color for suzzy is #A1A8FF and is actually considered to be a light sky blue. Not purple!</quote>
+    
+    <!-- Product: BECCA2D -->
+    <header>BECCA2D</header>
+    <text> 
+        BECCA2D is a <b>2D Web Game Engine</b> developed by suzzy games and is 
+        used in the upcoming <a href="/projects">super marimari_eno</a> fan-game.
+    </text>
+    <beanie alt="BECCA2D Logo" resource="file://library/branding/becca-logo.svg?preset=branding" />
+    <quote>Trivia: BECCA2D is named after my sister, since my nickname for her is Becca.</quote>
+    
+    <!-- Product: Project Monke -->
+    <header>Project Monke</header>
+    <text>Project Monke is an upcoming platformer game developed by suzzy games.</text>
+    <beanie alt="PM Game Icon #1" resource="file://library/branding/monke-gameicon.png?preset=branding" />
+    <beanie alt="PM Game Icon #2" resource="file://library/branding/monke-gameicon-initials.png?preset=branding" />
+    <beanie alt="PM Game Logo #1" resource="file://library/branding/monke-logo-text.png?preset=branding" />
+    <beanie alt="PM Game Logo #2" resource="file://library/branding/monke-logo-initials.png?preset=branding" />
+    <beanie alt="PM Promo Art #1" resource="file://library/branding/monke-promo-1.png?preset=branding" />
+    <quote>Trivia: The Polka Dot pattern was inspired by DDLC+ promo art.</quote>
+    
+    <!-- Product: Cart Ride around a Fumo -->
+    <header>Cart Ride Around a Fumo</header>
+    <text>
+        Cart Ride around a Fumo is a <a href="https://www.roblox.com/games/9987852646/Cart-Ride-Around-a-Fumo">ROBLOX experience</a> developed by suzzy games.
+        Promo and Game Icon Art drawn by <a href="https://twitter.com/MondaeAkari">@mondaeakari</a>.
+    </text>
+    <beanie alt="CRAF Game Icon #1" resource="file://library/branding/craf-gameicon-1.png?preset=branding" />
+    <beanie alt="CRAF Game Icon #2" resource="file://library/branding/craf-gameicon-2.png?preset=branding" />
+    <beanie alt="CRAF Promo Art #1" resource="file://library/branding/craf-promo-1.png?preset=branding" />
+    <beanie alt="CRAF Promo Art #2" resource="file://library/branding/craf-promo-2.png?preset=branding" />
+    <quote>
+        Trivia: The first icon didn't do so well to bring in new players. 
+        Which sucks because I liked it ;-;
+    </quote>
+</article>

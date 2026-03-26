@@ -1,0 +1,103 @@
+<article
+    id="repo-of-knowledge"
+    created="May 12 2024"
+    categoryId="behind-the-scenes"
+    authorId="bakonpancakz"
+    title="Repo of Knowledge"
+    snippet="Fresh paint, building libraries, and starting side-projects (again). Welcome to new suzzy games website!"
+    banner="file://blog/repo-of-knowledge/banner.png"
+    noindex="false"
+>
+    <!-- Introduction -->
+    <header>A Fresh Coat of Paint</header>
+    <text>
+        <b>Welcome to the new and improved suzzy games website!</b>
+    </text>
+    <text>
+        Absolutely everything on this site has been either upgraded or replaced
+        entirely. The blog system went from janky to proper, pages are now full
+        of content and trivia instead of being half-baked, and a new library was 
+        built. <h>More on this later!</h> 
+        I dedicated an entire weekend to turn this site from potato to french
+        fry. I absolutely love how it looks now and I hope you do too. 
+    </text>
+    <quote>Sometimes I open up the website just to stare at it @_@</quote>
+    <image
+        caption="New and Improved!"
+        alt="A 4 by 4 grid showing the old site on top and the new site design on the bottom"
+        resource="file://blog/repo-of-knowledge/SITE_SHOWCASE.jpg"
+    />
+
+    <!-- New Feature: oAuth2 -->
+    <header>Introducing oAuth2</header>
+    <text>
+        <b>Are you a developer? Then this chapter is for you!</b> Applications 
+        and oAuth2 are now available for everybody! This allows third-party 
+        developers to safely access your profile and the game data that 
+        <b>you</b> decide to share with them.
+    </text>
+    <text>
+        New features and subsequent documentation on those features will become 
+        available for developers in the library. 
+        <h>Which brings us to the next topic...</h>
+    </text>
+    <image
+        caption="oAuth2 User Interface (You've seen one of these before right?)"
+        alt="An example oAuth2 prompt asking the user to allow access to certain account permissions"
+        resource="file://blog/repo-of-knowledge/OAUTH2_SHOWCASE.png"
+    />
+
+    <!-- New Feature: Developer Docs -->
+    <header>Building a Library</header>
+    <text>
+        <a href='/library'>The library</a> is a new section of the suzzy website!
+        It contains legal stuff, branding guidelines, and most importantly 
+        documentation for developers. If you're really bored check out the 
+        <a href="/library/home/branding" target="_blank">branding article</a>! 
+        It contains little bits of trivia on all past suzzy projects.
+    </text>
+    <image
+        caption="Library Homepage (Its Boo!)"
+        alt="A preview for the suzzy games library with the mascot sitting on a bean bag in their room reading a book"
+        resource="file://blog/repo-of-knowledge/LIBRARY_SHOWCASE.png"
+    />
+
+    <!-- Announcement: New 2D Game Engine -->
+    <header>Introducing BECCA2D</header>
+    <video
+        caption="BECCA2D Splash Screen"
+        resource="file://blog/repo-of-knowledge/BECCA2D_TEASER.mp4"
+        cover="file://blog/repo-of-knowledge/BECCA2D_TEASER_COVER.png"
+    />
+    <text>
+        <b>Introducing BECCA2D!</b> An <i>in-house 2D Game Engine</i> designed
+        from the ground up to be lightweight, efficient, extensible, and run in
+        Google Chrome. <h>sorry firefox users :p</h>
+    </text>
+    <text>
+        I'm planning on using this engine in a new side-project, a side-scrolling
+        style platformer fangame based on a certain fish vtuber I've taken a liking
+        to recently. This fangame also shares a considerable amount of features with 
+        Project Monke, so this will also serve as a personal training ground of sorts. 
+    </text>
+    <text>
+        But that's all I'm sharing about this side-project for today! I'll be making 
+        a dedicated post on the engine showcasing its features, design, and reasoning
+        soon™
+    </text>
+
+    <!-- Summary -->
+    <header>Epilogue</header>
+    <text> 
+        So that's my content dump for the month. Again I'm still working on new
+        stuff and it'll all be done and released eventually 
+        <h>gimme like six months or something :P</h>
+    </text>
+    <image
+        caption="ok that's it see you soon™"
+        alt="A man holding the ball standing in front a white board with the words soon trademarked"
+        resource="file://blog/repo-of-knowledge/conclusion.png"
+    />
+    <quote>p.s. I got a drawing tablet! nothing crazy just a wacom one! expect more doodles all over the site now</quote>
+    <quote>p.p.s still no blog comments btw >.></quote>
+</article>

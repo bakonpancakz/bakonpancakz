@@ -1,0 +1,28 @@
+<article
+    id="tutorials"
+    authorId=""
+    categoryId="api"
+    title="Tutorials"
+    created="200"
+    snippet="Simple tutorials on certain things."
+    banner=""
+    noindex="false"
+>
+    <header>Creating an Application</header>
+    <text>
+        You can create an application using the <a href="https://suzzygames.com/account/applications">My Applications</a> 
+        page in the account management portal. Ensure your application has a 
+        memorable name and that you keep its secret key secure and private.
+    </text>
+    <image 
+        alt="Click on the Create Application Button"
+        caption="Click on the Create Application Button"
+        resource="file://library/tutorials/applications-step-1.png"
+    />
+    <image 
+        alt="You can then edit your Application by clicking on the Edit Button"
+        caption="You can then edit your Application by clicking on the Edit Button"
+        resource="file://library/tutorials/applications-step-2.png"
+    />
+    <!-- TODO: IMPROVE OAUTH2 TUTORIAL -->
+</article>

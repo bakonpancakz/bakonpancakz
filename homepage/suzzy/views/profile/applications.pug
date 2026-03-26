@@ -1,0 +1,102 @@
+extends ../_TemplateProfile
+block pageHeader
+    title suzzy - Manage Applications
+block pageContent 
+    - var loading_message = 'Applications'
+    - var empty_message   = 'No Applications'
+    - var empty_source    = 'file://icons/icon-app-none.svg'
+    - var empty_alt       = 'No Apps'
+    p(class='text-hero') Applications
+    p(class='text-tip') Create applications that interface with suzzy games and it's users.
+    p(class='text-tip') 
+        | Check out the #[a(href='/library' class='text-tip') library] 
+        | for documentation on how to develop with suzzy games.
+    div(class='collection-divider')
+    button(class='default wide' id='action-create' hidden)
+        | Create New Application
+    include ../_TemplateProfilePage
+
+        //- //- Template Redirect URL
+        //- div(class='input-redirect' hidden)
+        //-     input(
+        //-         type='text'
+        //-         class='text'
+        //-         autocomplete='off'
+        //-         maxlength=128
+        //-         placeholder='https://example.org/oauth2-redirect'
+        //-         required=true
+        //-         pattern='^(http|https)://.*'
+        //-     )
+        //-     button(class='default destructive') Delete
+
+        //- //- Templat Application
+        //- div(class='collection-item special-shadow' id='application-template' hidden)
+        //-     //- Application Metadata
+        //-     div(class='application-header')
+        //-         img(
+        //-             id='app-icon'
+        //-             aria-hidden='true'
+        //-             class='application-icon'
+        //-             onload='this.style.opacity=1'
+        //-         )
+        //-         div(class='application-info')
+        //-             p(id='app-name' class='text-header') Name 
+        //-             p(id='app-desc' class='text-tip') Description
+        //-             p(class='text-tip text-muted' id='verified-message' hidden) ★ Verified Application
+        //-         button(id='input-edit' class='default') Edit
+        //-     //- Application Options
+        //-     div(class='application-options options-hidden')
+        //-         div(class='divider-line')
+        //-         //- Personalization
+        //-         p(class='text-header') About
+        //-         input(
+        //-             id='input-name' 
+        //-             placeholder='Name'
+        //-             autocomplete='off' 
+        //-             type='text'
+        //-             class='text' 
+        //-             maxlength=32
+        //-         )
+        //-         textarea(
+        //-             id='input-desc'
+        //-             placeholder='Description'
+        //-             autocomplete='off' 
+        //-             class='text' 
+        //-             maxlength=320
+        //-             rows=5
+        //-             style='max-height:200px;'
+        //-         )
+        //-         input(
+        //-             type='file' 
+        //-             id='input-icon-file' 
+        //-             accept='image/jpeg, image/webp, image/gif, image/png'
+        //-             hidden
+        //-         )
+        //-         button(class='default wide' id='input-icon') 
+        //-             | Upload Icon
+        //-         button(class='small text-tip' id='input-icon-remove') 
+        //-             | Remove Icon
+
+        //-         //- Redirects
+        //-         div(class='divider-line')
+        //-         p(class='text-header') Redirects
+        //-         div(id='container-redirects')
+        //-         button(class='default wide' id='input-redirect-new') 
+        //-             | New Redirect
+        //-         p(class='text-tip' id='input-clientid') Client ID: 
+                
+        //-         //- Actions
+        //-         p(id='status-message') 
+        //-         button(class='default wide destructive' id='input-discard' disabled) 
+        //-             | Discard
+        //-         button(class='default wide' id='input-save' disabled)
+        //-             | Save Changes  
+
+        //-         //- Danger Zone
+        //-         div(class='divider-line')
+        //-         button(class='default destructive wide' id='input-reset')
+        //-             | Reset Secret Key
+        //-         button(class='default destructive wide' id='input-delete')
+        //-             | Delete Application
+
+    script(src='file://scripts/profile-applications.ts')

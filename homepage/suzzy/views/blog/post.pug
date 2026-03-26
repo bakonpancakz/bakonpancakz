@@ -1,0 +1,55 @@
+extends ../_TemplatePublic
+block pageHeader
+    - const article  = relevantArticle
+    - const author   = relevantArticle.author
+    - const category = relevantArticle.category
+    link(rel='stylesheet' href='file://styles/browser-blog.css')
+    link(rel='stylesheet' href='file://styles/template-article.css')
+    meta(property='og:title'        content=article.info.title)
+    meta(property='og:description'  content=`By ${author.name} on ${formatDate(article.info.created)}\n---\n${article.info.snippet}`)
+    meta(name='description'         content=`By ${author.name} on ${formatDate(article.info.created)}\n---\n${article.info.snippet}`)
+    meta(property='og:image'        content=`${article.info.banner}?direct=true`)
+    meta(property='twitter:card'    content='summary_large_image')
+    title blog | #{article.info.title} (#{category.name})
+
+block pageContent 
+    div(class='main-wrapper')
+
+        //- Layout: Sidebar
+        div(class='main-aside article-chapters')
+            p(class='text-headline') Chapters
+            each element in article.elements
+                if (element.type === 'header')
+                    a(href=`#${formatString(element.value)}` class='text-tip') &bull; #{element.value}
+            a(class='text-tip text-muted' href='#') ▲ Back to Top
+
+        //- Mobile Users get a small triangle in the bottom right instead
+        a(class='default mobile-home' href='#home') ▲
+
+        //- Layout: Article
+        div(class='main-content' role='main' id='home')
+            //- Article Headeer
+            img(
+                class='article-banner special-dropshadow' 
+                alt=`Banner for ${article.info.title}` 
+                src=article.info.banner
+            )
+            p(class='text-hero article-header') #{article.info.title}
+            div(class='article-header')
+                div(class='item-info')
+                    img(class='filter-icon' alt=`Icon for Category ${category.name}` src=category.icon)
+                    a(class='text-tip' href=`/blog/${category.id}`) #{category.name}
+                p(class='text-tip') 
+                    | #{formatDate(article.info.created)} 
+                p(class='text-tip') 
+                    | #{calcReadTime(article.elements)} minute read
+                div(class='item-info')
+                    img(class='filter-icon' alt=`Avatar for Author ${author.name}` src=author.icon)
+                    p(class='text-tip') #{author.name}
+            div(class='divider-line')
+
+            //- Article Content
+            include ../_TemplateArticle
+
+    div(style='height: 64px;')
+    script(src='file://scripts/shared-article.ts')

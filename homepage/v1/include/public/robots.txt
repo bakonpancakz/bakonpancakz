@@ -1,0 +1,5 @@
+#   \_/
+# ()o_o) <( beep boop )
+
+User-agent: *
+Disallow:

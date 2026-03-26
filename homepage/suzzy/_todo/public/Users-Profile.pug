@@ -1,0 +1,73 @@
+//- redo with connection to profiles database
+extends _Template.pug
+block pageStyles 
+    link(rel='stylesheet' href=`/assets/styles/ui-public-profile.css?v=${cachev}`)
+block pageScripts
+    script(src=`/assets/scripts/public-profile.js?v=${cachev}`)
+block pageHeader
+    meta(property='og:image'        content='https://suzzygames.com/assets/images/og-logo.png')
+    meta(property='og:title'        content=`profile - ${username}`)
+    meta(property='og:description'  content=`View ${username}'s profile on suzzy games`)
+    meta(name='description'         content=`View ${username}'s profile on suzzy games`)
+    title profile - #{username}
+block pageContent 
+    noscript
+        style.
+            noscript {
+                display: grid;
+                box-sizing: border-box;
+                place-items: center;
+                align-content: center;
+            }
+            #alert-load {
+                display: none
+            }
+        div(class='collection-message')
+            img(aria-hidden='true' src='/assets/images/icons/icon-cross.svg' alt='Icon for Cross')
+            p This page requires JavaScript to be enabled.
+
+    div(class='collection-message' id='alert-load')
+        img(src='/assets/images/icons/diagram-loading.svg' alt='Icon for Spinner')
+        p Loading Profile
+    div(class='collection-message' id='alert-error' hidden)
+        img(src='/assets/images/icons/icon-cross.svg' alt='Icon for Cross')
+        p(id='alert-error-message') An Error has Occurred
+
+    div(class='main-wrapper')
+        //- Profile
+        div(class='main-aside' hidden)
+            div(class='profile-container')
+                div(id='profile-banner')
+                div(class='profile-header')
+                    img(id='profile-avatar' alt='My Avatar')
+                    div(id='profile-badges')
+                div(class='profile-about text-nopad')
+                    div(class='info-alongside')
+                        p(id='profile-displayname')
+                        p(id='profile-username') 
+                    p(id='profile-subtitle' class='text-tip')
+                    div(class='divider-line' id='profile-divider' hidden)
+                    pre(id='profile-bio' class='text-tip')
+            //- Categories
+            div(class='divider-spacer')
+            p(class='text-header') Categories
+            button(class='category category-active')
+                img(alt='Icon for Blog Post' src='/assets/blog/category-any.png')
+                p(class='category-name') None
+                p(class='category-count text-muted') (x)
+            //- button(class='category' id='category-posts')
+            //-     img(alt='Icon for Blog Post' src='/assets/blog/category-news.png')
+            //-     p(class='category-name') Blog Posts
+            //-     p(class='category-count text-muted') (1)
+            //- button(class='category' id='category-friends')
+            //-     img(alt='Icon for Blog Post' src='/assets/blog/category-friends.png')
+            //-     p(class='category-name') Friends
+            //-     p(class='category-count text-muted') (0)
+        
+        div(class='divider-dashed' hidden)
+
+        //- Content
+        div(class='main-content' role='main' hidden)
+            div(class='collection-message')
+                img(src='/assets/images/icons/icon-filter.svg' alt='Icon for Filter')
+                p(class='text-muted') Please select a category

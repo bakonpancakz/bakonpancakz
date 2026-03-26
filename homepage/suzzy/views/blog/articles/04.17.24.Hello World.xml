@@ -1,0 +1,182 @@
+<article
+    id="hello-world"
+    created="Apr 17 2024"
+    categoryId="behind-the-scenes"
+    authorId="bakonpancakz"
+    title="Hello World!"
+    snippet="Breaking the radio silence what has bakonpancakz been up to? And what exactly is a suzzy?"
+    banner="file://blog/hello-world/banner.gif"
+    noindex="false"
+>
+    <header>Welcome to suzzy games!</header>
+    <text> 
+        I made this site to serve as a hub for my game development hobby. There
+        is no theme, there is no incentive, just pure passion and efficient code. 
+        I'll be sharing previews, progress, and generally whatever comes to mind. 
+        So that's what this site is for! And this post contains a bunch of previews 
+        of things I've worked on that <b>might</b> become their own game in the 
+        future. 
+    </text>
+    <quote>Except for Cart Ride that one was just an update :P</quote>
+
+    <!-- Game: Cart Ride around a Fumo -->
+    <header>Cart Ride Around a Fumo</header>
+    <text>
+        <a href="https://www.roblox.com/games/9987852646/Cart-Ride-Around-a-Fumo">Cart Ride Around a Fumo</a> 
+        is my own spin on the cart ride genre that was all over in the olden days
+        of ROBLOX. It's a labor of love with way too much effort put into it, but
+        I like to look back at it and try to match that level of quality for 
+        everything I do.
+    </text>
+    <quote>Why Fumos? Because they're funny.</quote>
+    <text>
+        I spent a whole two months on it and again, put way more effort into it 
+        than I should have, but that's just how I roll (⌐■_■). I actually got a 
+        lot of my cousins to playtest it and everybody had a lot of fun blowing 
+        each other up. Which I like to think is what kickstarted my passion. 
+        <h>(my origin story)</h>
+    </text>
+    <image
+        caption="Home Sweet Home"
+        alt="Overhead view of the in-game track"
+        resource="file://blog/hello-world/craf-1.jpeg"
+    />
+    <text> 
+        Around ten people play it daily and people are still donating despite 
+        its age, so I definitely did something right. (^_^) It even has a 
+        couple videos on it, one of <a href="https://www.youtube.com/watch?v=Jjep6xt3PiM">friends just having fun</a>, 
+        and a <a href="https://www.youtube.com/watch?v=fyoQxBuR1Mo">super duper edited one</a>. 
+    </text>
+    <quote>Thanks guys &lt;3</quote>
+    <text>
+        I actually planned to release a major update for it which would have added 
+        cart customization and a track editor. But the update grew too large in 
+        scope and is now being developed as its own standalone game. 
+        <h>(stay tuned!)</h>
+    </text>
+    <text>
+        It's nothing too interesting in my opinion but here's what one of the
+        menus looked like.
+    </text>
+    <image
+        caption="(Scrapped) Cart Selection Menu"
+        alt="Screenshot of a scrapped concept showcasing cart customization"
+        resource="file://blog/hello-world/craf-2.jpeg"
+    />
+
+    <!-- Game: Five Nights at Kanye 2 -->
+    <header>Five Nights at Kanye 2</header>
+    <text> 
+        The <a href="https://www.roblox.com/games/13051172029/Five-Nights-at-Kanyes-FNAK-CLASSIC">original FNAK</a>
+        was made in only a few hours but my friends really liked the idea so I fleshed it
+        out a bit more and released a <a href="https://www.roblox.com/games/11229358049/Five-Nights-at-Kanyes-FNAK">remastered version</a>
+        just for fun. A few people liked it and sent me messages asking for a second
+        entry so I actually worked on it for a bit. 
+    </text>
+    <image
+        caption="Main Menu"
+        alt="Main Menu for Five Nights at Kanyes 2, taking place in a dimly lit restaurant"
+        resource="file://blog/hello-world/fnak-1.jpeg"
+    />
+    <image
+        caption="Kanye's Mansion (Courtyard)"
+        alt="Wide angle view of the courtyard in Kanye's Mansion"
+        resource="file://blog/hello-world/fnak-2.jpeg"
+    />
+    <image
+        caption="Kanye's Mansion (Overhead with Layout)"
+        alt="Overhead view of Kanye's Mansion with each room labelled"
+        resource="file://blog/hello-world/fnak-3.jpeg"
+    />
+    <text> 
+        The story I had in mind was that this was a prequel to the first game, 
+        and this was the night you broke into Kanye's house to steal DONDA 3 
+        for Twitter clout <s>(now called x lol)</s>. Over the course of five 
+        nights you <h>(and up to 3 other friends)</h> were supposed to collect 
+        story items that would unlock another room after each night. 
+    </text>
+    <text>
+        Kanye was also intended to have a better than average AI that would actively 
+        hunt you down as you made mistakes. Something as small as leaving a light on
+        would make him suspicious and have him start to slowly but surely hunt you 
+        down <h>(working as a soft time limit)</h>. 
+    </text>
+    <text> 
+        For some added suspense, the music changes as Kanye's suspicious level changes. 
+        All the way from clueless to chasing you down. It is based on Kanye's track 
+        <a href="https://open.spotify.com/track/3JWiDGQX2eTlFvKj3Yssj3">Closed on Sunday</a>
+        and made by Dakota <h>(he'll get a proper shoutout later!)</h>
+    </text>
+    <audio name="FNAK Stage 1 - We are Here (Arrival)"              resource="file://blog/hello-world/FNAK_Stage_1.mp3"/>
+    <audio name="FNAK Stage 2 - Something Isn't Right (Tracking)"   resource="file://blog/hello-world/FNAK_Stage_2.mp3"/>
+    <audio name="FNAK Stage 3 - He's Near (Tracking, Close)"        resource="file://blog/hello-world/FNAK_Stage_3.mp3"/>
+    <audio name="FNAK Stage 4 - Found you (Chasing)"                resource="file://blog/hello-world/FNAK_Stage_4.mp3"/>
+
+    <!-- Game: Project Z -->
+    <header>Project Z</header>
+    <text> 
+        Project Z is a <i>player-versus-player, first-person shooter, zombie survival</i> 
+        game where you barricade yourself into a room and fight off zombified 
+        players for six waves with each wave unlocking new zombie classes and
+        zombie bosses. <h>Did you get all that?</h>
+    </text>
+    <text>
+        I worked on a few systems <h>(UI, Social, Weapons, etc)</h> but never 
+        got around to making an actual working prototype to fully test the 
+        idea out. Even worse is that changes to ROBLOX suddenly broke my 
+        scripts so I can't even show them off except for in this equally 
+        terrible quality video.
+    </text>
+    <text>
+        It's definitely a cool idea and I will most likely revisit it in the
+        future and give the love it deserves. This idea actually borrows a ton
+        from the original <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=105462463">Garry's Mod Zombie Survival</a> 
+        which I used to play it all the time back in middle school and really
+        wanted to bring the idea to modern audiences.
+    </text>
+    <video
+        caption="Broken Weapons and Sprays"
+        cover="file://blog/hello-world/ProjectZ-Cover.jpeg"
+        resource="file://blog/hello-world/ProjectZ.mp4"
+    />
+
+    <!-- Section: The Plan -->
+    <header>What now?</header>
+    <text>
+        Well, I'm going back to working on that standalone project I mentioned 
+        earlier! It's called Project Monke and you can think of it as Super 
+        Monkey Ball and Super Mario Maker put together. It has online services 
+        <h>(which is why you can create an account btw)</h> so that should give
+        you an idea of how large of a scope this project has.
+    </text>
+    <text>
+        If you make an account there isn't really a whole lot you can do with it
+        now, except for some profile customization and security related features. 
+        I'll be adding comments to the site at a later date, but for now the 
+        foundation has been set.
+    </text>
+    <image
+        caption="And for all the nerds out there, the backend is written in Go, the frontend is hand-written PUG+CSS+JS, and served using NGINX, on my personal server (nicknamed miku)"
+        alt="Picture of a computer stuffed in the closest with a Hatsune Miku sticker slapped in the corner"
+        resource="file://blog/hello-world/peak-performance.jpeg"
+    />
+
+    <!-- Section: Special Thanks -->
+    <header>Special Thanks to Dakota</header>
+    <text> 
+        Before I go, I'd also like to share a couple more tracks from Dakota 
+        <s>who I have locked in my basement</s> who graciously offered to make 
+        music for my projects. He also made the Five Nights at Kanye tracks you 
+        heard earlier. <a href="https://soundcloud.com/user-627340075">Check out his Soundcloud!</a> ^_^ 
+    </text>
+    <audio name="Project Monke - Settings"      resource="file://blog/hello-world/ProjectMonke_Settings.mp3"/>
+    <audio name="FNAK - Settings (Original)"    resource="file://blog/hello-world/FNAK_Options_Original.mp3"/>
+    <audio name="FNAK - Settings (In-Game)"     resource="file://blog/hello-world/FNAK_Options_InGame.mp3"/>
+    <video
+        caption="inside joke :3"
+        cover="file://blog/hello-world/settings-Cover.jpeg"
+        resource="file://blog/hello-world/settings.mp4"
+    />
+    <quote>p.s. wanna leave an encouraging comment or question? Leave a comment on my twitter!</quote>
+    <quote>p.p.s there's an easter egg hidden somewhere on this site for users, I hope you love picross as much as I do~</quote>
+</article>

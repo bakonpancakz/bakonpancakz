@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        link(rel='icon' type='image/png' href='file://images/favicon.png')
+        link(rel='stylesheet' href='file://fonts/font-poppins.css')
+        link(rel='stylesheet' href='file://styles/template-global.css')
+        link(rel='stylesheet' href='file://styles/template-modals.css')
+        link(rel='stylesheet' href='file://styles/template-special.css')
+        meta(property='theme-color' content='#A1A8FF')
+        block pageHeader
+    body
+        div(class='wrapper-special')
+            div(class='container-special')
+                block pageContent
+        script(src='file://scripts/shared-utils.ts')
+        block pageEscaped

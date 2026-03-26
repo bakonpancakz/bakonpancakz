@@ -1,0 +1,37 @@
+extends ../_TemplateProfile
+block pageHeader
+    title suzzy - Manage Connections
+block pageContent 
+    - var loading_message = 'Connections'
+    - var empty_message   = 'No Connections'
+    - var empty_source    = 'file://icons/icon-plug-socket.svg'
+    - var empty_alt       = 'Disconnect'
+    p(class='text-hero') Connections
+    p(class='text-tip') Manage the connections your account has with applications.
+    p(class='text-tip') 
+        | Official Applications are labelled with 
+        | #[span(class='text-tip text-muted') (&#9733; Verified Application)] 
+        | under their description.
+    div(class='collection-divider')
+    include ../_TemplateProfilePage
+    
+        //- //- Template Scope
+        //- div(class='scope' id='scope-template' hidden)
+        //-     div(class='dot-green')
+        //-     span Scope Description
+
+        //- //- Template Item
+        //- div(class='collection-item special-shadow' id='application-template' hidden)
+        //-     div(class='application-header')
+        //-         img(aria-hidden='true' class='application-icon' onload='this.style.opacity=1')
+        //-         div(class='application-info')
+        //-             p(class='text-header') Name 
+        //-             p(class='text-tip') Description
+        //-             p(class='text-tip text-muted' id='verified-message' hidden) ★ Verified Application
+        //-             p(class='text-error' id='error-message') 
+        //-         button(class='default destructive') Disconnect
+        //-     div(class='text-box')
+        //-         p(class='text-tip') This application can: 
+        //-         div(class='scopes')
+
+    script(src='file://scripts/profile-connections.ts')

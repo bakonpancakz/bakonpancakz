@@ -1,0 +1,79 @@
+each e in relevantArticle.elements
+    case e.type
+        when 'text'
+            p
+                each t in e.items
+                    case t.tag
+                        when ''
+                            | #{t.content} 
+                        when 'h'
+                            | #[span(class='text-hint') #{t.content}] 
+                        when 'c'
+                            | #[span(class='text-code') #{t.content}] 
+                        when 'a' 
+                            | #[a(class='link-highlight' target=t.target href=t.href) #{t.content}] 
+                        when 's' 
+                            | #[s #{t.content}] 
+                        when 'b' 
+                            | #[b #{t.content}] 
+                        when 'i' 
+                            | #[i #{t.content}] 
+        when 'header'
+            p(class='element-header' id=formatString(e.value)) #{e.value}
+        when 'subheader'
+            p(class='element-subheader' id=formatString(e.value)) #{e.value}
+        when 'quote'
+            p(class='text-quote') > #{e.value}
+        when 'code'
+            div(class='element-code') 
+                button(class='default') Copy
+                pre !{e.content} 
+        when 'image'
+            div(class='element-gallery')
+                div(class='gallery-item')
+                    img(class='special-dropshadow' loading='lazy' src=e.resource alt=e.alt)
+                    p #{e.caption}
+        when 'video'
+            div(class='element-gallery')
+                div(class='gallery-item')
+                    video(class='special-dropshadow' controls preload='none' poster=e.cover)
+                        source(src=e.resource)
+                    p #{e.caption}
+        when 'audio'
+            div(class='element-audio special-shadow')
+                audio(preload='auto')
+                //- Audio Metadata
+                div(class='audio-container')
+                    p #{e.name}
+                    a(class='audio-download' title='Download Track' download=e.resource href=e.resource)
+                        img(src='file://icons/icon-download.svg' alt='Icon for Download')
+                //- Audio Controls
+                div(class='audio-container')
+                    button(class='audio-button' title='Play/Pause Audio')
+                        img(src='file://icons/icon-play.svg' alt='Icon for Play/Pause')
+                    input(class='audio-slider' type='range' value='0' disabled)
+                    p(class='audio-time') -:--/-:--
+        when 'table'
+            table(class='element-table special-shadow')
+                - var firstRow = e.items.at(0)
+                - var otherRow = e.items.slice(1)
+                thead
+                    tr
+                        each column in firstRow
+                            th #{column}
+                tbody
+                    each row in otherRow
+                        tr
+                            each column in row
+                                td #{column}
+        when 'list'
+            ul(class='element-list')
+                each listItem in e.items
+                    li &bull; #{listItem}
+        when 'banner'
+            img(class='element-banner' src=e.resource alt=e.alt)
+        when 'beanie'
+            a(href=e.resource download=(e.resource.split('/').at(-1).split('?').at(0)))
+                img(class='element-beanie' src=e.resource alt=e.alt)
+        default
+            - throw "Unknown Type: " + e.type

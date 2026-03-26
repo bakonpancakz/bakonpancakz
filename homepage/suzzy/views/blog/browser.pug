@@ -1,0 +1,104 @@
+extends ../_TemplatePublic
+block pageHeader
+    link(rel='stylesheet' href='file://styles/browser-blog.css')
+    meta(property='og:image' content='file://images/public-logo-og.png')
+    meta(property='og:title' content='suzzy games - blog')
+    meta(property='og:description' content='News and Updates straight from the source.')
+    meta(name='description' content='News and Updates straight from the source.')
+    title suzzy games - blog
+    style.
+        div.divider-mobile {
+            display: none !important;
+        }
+block pageEscaped
+    div(class='widget-wrapper background-scroll')
+
+        //- Widget: Latest Articles
+        div(class='widget')
+            p(class='text-header') > Latest < 
+            div(class='widget-latest-articles')
+                - var recents = articles.slice(0, 4)
+                each article, index in recents
+                    div(class='latest-item')
+                        img(class='latest-banner special-dropshadow' alt=`Banner Image for Blog Post '${article.info.title}'` src=article.info.banner)
+                        div(class='latest-content')
+                            p(class='text-headline') #{article.info.title}
+                            div(class='latest-info')
+                                p(class='text-tip text-muted') #{article.author.name} 
+                                p(class='text-tip text-muted') &bull; #{formatDate(article.info.created)} &bull;
+                                p(class='text-tip text-muted') #{article.category.name}
+                            div(class='divider-header')
+                            p(class='text-tip') #{article.info.snippet}
+                            a(class='text-tip text-muted' href=`/blog/${article.category.id}/${article.info.id}`) 
+                                | Read More (#{calcReadTime(article.elements)} minutes)
+                                
+        //- Widget: Latest Controls
+        div(class='widget widget-latest-controls')
+            div(class='latest-spacer')
+            div(class='latest-controls')
+                button(class='default' id='latest-last' aria-label='Last Blog Post') <
+                each _, index in recents
+                    div(class='dot-circle' + (index === 0 ? ' dot-active' : ''))
+                button(class='default' id='latest-next' aria-label='Next Blog Post') >
+    script(src='file://scripts/browser-blog.ts')
+
+block pageContent 
+    div(class='main-wrapper')
+
+        //- Browser Filters
+        div(class='main-aside')
+            p(class='text-header') > Browser <
+            a(class=`filter-link ${!relevantCategory ? 'filter-active' : ''}` href='/blog')
+                img(class='filter-icon' alt='Icon for Anything' src='file://blog/category-any.png')
+                p(class='filter-name text-tip') Anything
+            each category in categories
+                a(
+                    href=`/blog/${category.id}`
+                    class=`filter-link ${relevantCategory && (relevantCategory.id === category.id ? 'filter-active' : '')}`
+                )
+                    img(class='filter-icon' alt=`Icon for Category ${category.name}` src=category.icon)
+                    p(class='filter-name text-tip') #{category.name}
+        div(class='divider-dashed')
+
+        //- Browser Articles
+        div(class='main-content' role='main')
+            if relevantArticles.length === 0
+                //- No Articles Found
+                div(class='collection-empty')
+                    img(aria-hidden='true' alt='Icon for No Posts' src='file://images/public-noposts.png')
+                    p(class='text-muted') no blog posts found
+            else
+                //- Article Previews
+                each article, index in relevantArticles
+                    a(class='collection-item' href=`/blog/${article.category.id}/${article.info.id}`)
+                        img(class='item-banner' alt=`Banner Image for Blog Post ${article.info.title}` src=article.info.banner)
+                        div(class='item-content')
+                            p(class='text-header') #{article.info.title}
+                            div(class='item-info')
+                                img(class='filter-icon icon-small' alt=`Icon for Category ${article.category.name}` src=article.category.icon)
+                                p(class='text-tip') #{article.category.name}
+                                //- img(class='filter-icon icon-small' alt=`Avatar for Author ${article.author.name}` src=article.author.icon)
+                                //- p(class='text-tip') #{article.author.name}
+                                p(class='text-tip text-muted item-bull') &bull;
+                                p(class='text-tip')  #{formatDate(article.info.created)}
+                                p(class='text-tip text-muted item-bull') &bull;
+                                p(class='text-tip')  #{calcReadTime(article.elements)} minute read
+                            p(class='text-tip text-muted') #{article.info.snippet}
+
+    //- Page Select
+    if relevantArticles.length !== 0
+        div(class='main-wrapper')
+            div(class='main-aside')
+            div(class='main-content' role='main')
+                div(class='collection-pageselect')
+                    - var isLastPage  = (pageCurrent === 1)
+                    - var noNextPage = (pageCurrent === pageTotal)
+                    - var BASE_URL = '/blog' + (relevantCategory ? `/${relevantCategory.id}` : '')
+                    - var hrefLastPage = BASE_URL + (pageCurrent === 2 ? '' : (isLastPage ? '' : `/${pageCurrent - 1}`))
+                    - var hrefNextPage = BASE_URL + (noNextPage ? '' : `/${pageCurrent + 1}` )
+
+                    a(class='default text-tip' href=(hrefLastPage) disabled=(isLastPage)) <
+                    each _, index in Array(pageTotal)
+                        div(class=('dot-circle ' + (index === (pageCurrent-1) ? 'dot-active': '')).trim())
+                    a(class='default text-tip' href=(hrefNextPage) disabled=(noNextPage)) >
+        div(class='divider-spacer')

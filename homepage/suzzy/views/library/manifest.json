@@ -1,0 +1,47 @@
+{
+    "itemsPerPage": 8,
+    "noBrowser": true,
+    "authors": [
+        {
+            "id": "",
+            "name": "suzzy",
+            "icon": ""
+        }
+    ],
+    "categories": [
+        {
+            "id": "home",
+            "name": "Home",
+            "icon": ""
+        },
+        {
+            "id": "legal",
+            "name": "Legal",
+            "icon": ""
+        },
+        {
+            "id": "api",
+            "name": "API",
+            "icon": ""
+        },
+        {
+            "id": "status",
+            "name": "Status",
+            "icon": ""
+        }
+    ],
+    "articles": [
+        "home/Welcome.xml",
+        "home/Branding.xml",
+        "legal/Privacy Policy.xml",
+        "legal/Terms of Service.xml",
+        "api/Users.xml",
+        "api/OAuth2.xml",
+        "api/Applications.xml",
+        "api/Reference.xml",
+        "api/Tutorials.xml",
+        "api/Changelog.xml",
+        "status/Reference.xml",
+        "status/Endpoints.xml"
+    ]
+}

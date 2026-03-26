@@ -1,0 +1,96 @@
+extends ../_TemplateProfile
+block pageHeader
+    title suzzy - Manage Profile
+block pageContent 
+    - var loading_message = 'Profile'
+    p(class='text-hero') Profile
+    p(class='text-tip') Personalize your profile to make it uniquely yours!
+    p(class='text-tip') Animated Avatars and Banners are supported! Uploads up to 8MB are allowed.
+    div(class='collection-divider')
+    include ../_TemplateProfilePage
+
+        //-     div(class='profile-options text-nopad')
+        //-     //- About Section
+        //-     p(class='text-header') About Me
+        //-     input(
+        //-         type='text'
+        //-         id='input-displayname' 
+        //-         class='text' 
+        //-         placeholder='Displayname'
+        //-         maxlength=32
+        //-     )
+        //-     input(
+        //-         type='text'
+        //-         id='input-subtitle' 
+        //-         class='text' 
+        //-         placeholder='Subtitle'
+        //-         maxlength=32
+        //-     )
+        //-     textarea(
+        //-         id='input-bio'
+        //-         class='text' 
+        //-         placeholder='Biography'
+        //-         rows=3
+        //-         maxlength=320
+        //-         style='max-height:200px;'
+        //-     )
+
+        //-     //- Images Section
+        //-     p(class='text-header') Images
+        //-     input(
+        //-         type='file' 
+        //-         id='input-avatar-file' 
+        //-         accept='image/jpeg, image/webp, image/gif, image/png'
+        //-         hidden
+        //-     )
+        //-     input(
+        //-         type='file' 
+        //-         id='input-banner-file' 
+        //-         accept='image/jpeg, image/webp, image/gif, image/png'
+        //-         hidden
+        //-     )
+        //-     button(class='default wide' id='button-avatar') 
+        //-         | Upload Avatar
+        //-     button(class='small text-tip' id='button-avatar-remove') 
+        //-         | Remove Avatar
+        //-     button(class='default wide' id='button-banner') 
+        //-         | Upload Banner
+        //-     button(class='small text-tip' id='button-banner-remove') 
+        //-         | Remove Banner
+
+        //-     //- Colors Section
+        //-     p(class='text-header') Accents
+        //-     div(class='widget-container')
+        //-         div(class='widget-color')
+        //-             label(class='text-tip' for='input-banner') Banner
+        //-             input(id='input-banner' type='color' class='color-preview')
+        //-         div(class='widget-color')
+        //-             label(class='text-tip' for='input-border') Border
+        //-             input(id='input-border' type='color' class='color-preview')
+        //-         div(class='widget-color')
+        //-             label(class='text-tip' for='input-background') Background
+        //-             input(id='input-background' type='color' class='color-preview')
+
+        //-     //- Actions Section
+        //-     div(class='divider-line')
+        //-     p(id='profile-status')
+        //-     button(class='default wide destructive' id='button-cancel' disabled) 
+        //-         | Discard
+        //-     button(class='default wide' id='button-submit' disabled)
+        //-         | Save Changes  
+
+        //- //- Preview
+        //- div(class='profile-container special-shadow')
+        //-     div(id='profile-banner')
+        //-     div(class='profile-header')
+        //-         img(id='profile-avatar' alt='My Avatar')
+        //-         div(id='profile-badges')
+        //-     div(class='profile-about text-nopad')
+        //-         div(class='info-alongside')
+        //-             p(id='profile-displayname')
+        //-             p(id='profile-username') 
+        //-         p(id='profile-subtitle' class='text-tip')
+        //-         div(class='divider-line' id='profile-divider' hidden)
+        //-         pre(id='profile-bio' class='text-tip')
+    
+    script(src='file://scripts/profile-index.ts')

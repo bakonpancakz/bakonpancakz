@@ -1,0 +1,314 @@
+/* Element: Paragraph Hint */
+span.text-hint,
+p.text-quote {
+    opacity: 0.75;
+    font-size: small;
+    font-style: italic;
+}
+
+/* Element: Paragraph Code */
+span.text-code {
+    font-size: large;
+    background-color: var(--background-layer-3);
+    color: var(--background-layer-0);
+    font-family: monospace;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+/* Element: Paragraph Highlight */
+a.link-highlight {
+    color: var(--background-layer-0);
+}
+
+/* Element: Beanie */
+img.element-beanie {
+    background: var(--background-layer-4);
+    width: fit-content;
+    max-width: 100%;
+    height: 128px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+/* Element: Header */
+p.element-header {
+    color: var(--background-layer-0);
+    font-size: x-large;
+    font-weight: 600;
+    border-bottom: 1px dashed var(--background-layer-0);
+    margin-bottom: 8px;
+    /* Fixes navbar being on top of element when using anchors */
+    padding-top: 64px;
+    margin-top: -32px;
+}
+
+div.layout-content p.element-header:first-child {
+    /* Remove Padding for first header in Library */
+    padding-top: 0;
+    margin-top: 0;
+}
+
+p.element-subheader {
+    color: var(--background-layer-0);
+    font-weight: 600;
+    padding-top: 16px;
+}
+
+div.layout-content p.element-subheader:first-child {
+    /* Remove Padding for first header in Library */
+    padding-top: 0;
+}
+
+/* Element: Code Block */
+
+div.element-code {
+    position: relative;
+    background-color: var(--background-layer-4);
+    border: 2px solid var(--background-layer-1);
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 6px 0 12px 0;
+}
+
+div.element-code pre,
+div.element-code pre span {
+    font-family: monospace;
+    font-size: 14px;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+span.hljs-attr,
+span.hljs-keyword,
+span.hljs-string {
+    color: #a1a8ff;
+}
+
+span.hljs-comment {
+    color: #bababe;
+}
+
+div.element-code:hover {
+    /* Remove padding so it doesn't shift page content */
+    padding-bottom: 4px;
+}
+
+div.element-code:hover pre {
+    /* Padding for scrollbar so it doesn't touch text directly */
+    padding-bottom: 4px;
+}
+
+div.element-code pre::-webkit-scrollbar {
+    height: 0;
+}
+
+div.element-code:hover pre::-webkit-scrollbar {
+    height: 4px;
+}
+
+div.element-code pre::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: var(--transition-time) ease-in-out all;
+    background-color: transparent;
+}
+
+div.element-code:hover pre::-webkit-scrollbar-thumb {
+    background-color: var(--background-layer-0);
+}
+
+div.element-code button {
+    /* Copy Code Button */
+    width: 80px;
+    position: absolute;
+    opacity: 0;
+    top: 4px;
+    right: 4px;
+    font-size: small;
+    transition: none;
+    transition: var(--transition-time) ease-in-out all;
+    border-color: var(--background-layer-1);
+}
+
+div.element-code:hover button {
+    opacity: 1;
+}
+
+/* Element: Banner */
+img.element-banner {
+    width: 100%;
+}
+
+/* Element: Quote */
+p.text-quote {
+    padding: 4px 0 8px 0;
+}
+
+/* Element: Audio */
+div.element-audio {
+    width: 100%;
+    border: 2px solid var(--background-layer-1);
+    background-color: var(--background-layer-4);
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 8px 16px;
+    box-sizing: border-box;
+}
+
+div.audio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+a.audio-download {
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    transition: var(--transition-time) ease-in-out opacity;
+}
+
+a.audio-download:hover {
+    opacity: 1;
+}
+
+button.audio-button {
+    border: 2px solid var(--background-layer-1);
+    background-color: var(--background-layer-4);
+    box-sizing: border-box;
+    min-width: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    border-radius: 8px;
+    transition: var(--transition-time) ease-in-out border-color;
+    text-align: center;
+}
+
+button.audio-button:hover,
+button.audio-button:focus-visible {
+    cursor: pointer;
+    border-color: var(--background-layer-0);
+}
+
+button.audio-button img {
+    height: 16px;
+    width: 16px;
+}
+
+input.audio-slider {
+    overflow: hidden;
+    appearance: none;
+    flex-basis: 100%;
+    background-color: var(--background-layer-1);
+    border-radius: 8px;
+    height: 8px;
+}
+
+input.audio-slider::-webkit-slider-thumb {
+    appearance: none;
+    background-color: var(--background-layer-0);
+    box-shadow: -1008px 0 0 1000px var(--background-layer-0);
+    border-radius: 100%;
+    height: 16px;
+    width: 16px;
+    transition: var(--transition-time) ease-in-out opacity;
+}
+
+input.audio-slider[disabled]::-webkit-slider-thumb {
+    opacity: 0.25;
+}
+
+p.audio-time {
+    font-family: 'Courier New';
+    background-color: var(--background-layer-5);
+    border-radius: 4px;
+    padding: 4px;
+    box-sizing: border-box;
+    min-width: fit-content;
+    text-align: center;
+}
+
+/* Element: Images & Videos */
+div.element-gallery {
+    margin: 8px 0;
+}
+
+div.gallery-item {
+    width: 100%;
+    display: grid;
+    height: fit-content;
+    place-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    gap: 8px;
+}
+
+div.gallery-item video:not(video:fullscreen) {
+    aspect-ratio: 16 / 9;
+}
+
+div.gallery-item img,
+div.gallery-item video:not(video:fullscreen) {
+    width: 100%;
+    border-radius: 8px;
+    background: var(--background-layer-4);
+    border: 2px solid var(--background-layer-1);
+}
+
+/* Content: List */
+ul.element-list {
+    margin: 8px 0;
+}
+
+ul.element-list li {
+    list-style-type: none;
+    font-size: small;
+    padding: 2px 0;
+    opacity: 0.9;
+}
+
+/* Content: Table */
+table.element-table {
+    width: 100%;
+    text-align: left;
+    background-color: var(--background-layer-5);
+    border: 2px solid var(--background-layer-2);
+    box-sizing: border-box;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 8px 0;
+    word-break: break-word;
+}
+
+table.element-table th,
+table.element-table td {
+    font-size: small;
+    font-family: monospace;
+    padding: 8px;
+}
+
+table.element-table thead {
+    background-color: var(--background-layer-5);
+}
+
+table.element-table thead th {
+    font-weight: bold;
+}
+
+table.element-table tbody tr:nth-child(odd) {
+    background-color: var(--background-layer-3);
+}
+
+/* Mobile Styling */
+@media (max-width: 640px) {
+    p.element-header {
+        padding-top: 32px;
+        margin-top: 0;
+    }
+}

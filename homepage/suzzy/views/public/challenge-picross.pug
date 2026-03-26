@@ -1,0 +1,187 @@
+extends ../_TemplateSpecial
+block pageHeader
+    meta(name='robots' content='noindex')
+    title Secret Challenge - Picross!
+    // Was bored and I love picross puzzles. Enjoy this little minigame. 
+    // This is also a one-time thing! There are no more easter eggs that give out badges!
+
+block pageEscaped
+    script(src='file://scripts/shared-utils.ts')
+    script(src='file://scripts/challenge-picross.ts')
+
+block pageContent
+    // In case you're wondering I sampled my keyboard for the audio. 
+    // Also no you cannot mute it, now suffer. 
+    audio(hidden src='file://audio/picross_2.mp3' id='set')
+    audio(hidden src='file://audio/picross_1.mp3' id='release')
+
+    p(class='text-header') Secret Challenge: Picross!
+    p(class='text-tip') Solve this puzzle to earn the picross badge for your profile.
+    p(class='text-tip text-muted') Controls: Left click to fill, right click to mark.
+
+    // thank you gzip for savin bandwidth
+    div(class='special-picross')
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 
+            p(class='picross-hint')
+            p(class='picross-hint') 1
+            p(class='picross-hint') 
+            p(class='picross-hint') 1
+            p(class='picross-hint') 
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint')
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 1
+            p(class='picross-hint') 3
+            p(class='picross-hint') 1
+            p(class='picross-hint')
+            p(class='picross-hint') 1
+            p(class='picross-hint')
+            p(class='picross-hint')
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 
+            p(class='picross-hint') 1
+            p(class='picross-hint') 7
+            p(class='picross-hint') 5
+            p(class='picross-hint') 5
+            p(class='picross-hint') 4
+            p(class='picross-hint') 8
+            p(class='picross-hint') 3
+            p(class='picross-hint') 2
+            p(class='picross-hint') 2
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 3
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint') 1
+            p(class='picross-hint') 1
+            p(class='picross-hint') 1
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 5
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint') 2
+            p(class='picross-hint') 2
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint') 3
+            p(class='picross-hint') 1
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint') 5
+            p(class='picross-hint') 1
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 8
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 7
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+        div(class='picross-row')
+            p(class='picross-hint')
+            p(class='picross-hint')
+            p(class='picross-hint') 5
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+            button(class='picross-button' dynamic)
+
+    //- User Actions
+    div(class='divider-line')
+    p(class='text-tip' id='time-spent') Time Spent: 00:00:00
+    div(class='special-alongside')
+        // NEVER GIVE UP!!!
+        a(dynamic class='default' target='_blank' href='https://www.youtube.com/watch?v=KxGRhd_iWuE&t=2s' onclick='this.onclick=()=>{ alert("quitter..."); window.location.assign("/") }') I Give Up...
+        a(dynamic class='default' id='done') Check it!

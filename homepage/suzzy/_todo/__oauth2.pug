@@ -1,0 +1,56 @@
+extends _TemplateSpecial.pug
+block pageHeader
+    link(rel='stylesheet'           href='file://styles/ui-account.css')
+    link(rel='stylesheet'           href='file://styles/unique-oauth2.css')
+    meta(property='og:title'        content='suzzy - Authorize App')
+    meta(property='og:description'  content='Connect an application to your suzzy games account.')
+    meta(name='description'         content='Connect an application to your suzzy games account.')
+    title suzzy - Authorize App
+block pageContent
+    div(class='modal-wrapper modal-static')
+        
+        //- Error Modal
+        div(id='oauth2-fail' class='oauth2-centered oauth2-container modal-container' hidden)
+            div(class='modal-content')
+                img(class='oauth2-icon' aria-hidden='true' src='/assets/images/icons/icon-cross.svg' alt='Icon for Cross')
+                p(class='text-header') An Error has Occurred
+                p(class='text-tip' id='fail-reason') Unknown Error
+                
+        //- Loading Modal
+        div(id='oauth2-load' class='oauth2-centered oauth2-container modal-container')
+            div(class='oauth2-centered modal-content')
+                img(aria-hidden='true' src='/assets/images/icons/diagram-loading.svg' alt='Icon for Spinner' height=64)
+                p Loading Application
+
+        //- Content Modal
+        div(id='oauth2-flow' class='oauth2-container modal-container' hidden)
+            div(class='oauth2-content modal-content')
+                
+                //- Header
+                div(class='divider-spacer')
+                div(class='oauth2-header')
+                    div(class='oauth2-icons')
+                        img(class='application-icon' id='image-user' onload='this.style.opacity=1')
+                        img(aria-hidden='true' class='oauth2-diagram' src='/assets/images/icons/diagram-connection.svg' alt='Diagram for Connection')
+                        img(class='application-icon' id='image-app' onload='this.style.opacity=1')
+                    p(id='content-aname' class='text-header')
+                    button(id='content-login' class='small' onclick='SignOut(false, true)') 
+                    div(class='divider-spacer')
+                div(class='divider-line')
+
+                //- Information
+                p(class='text-tip') This application will be allowed to:
+                div(id='content-scopes' class='scopes-wrapper text-box')
+                div(class='divider-line')
+                p(id='content-created' class='text-tip text-muted') 
+                    | &bull; Active since 
+                p(id='content-redirect' class='text-tip text-muted') 
+                    | &bull; You'll be redirected to: #[br]
+
+            //- Actions
+            div(class='modal-actions')
+                p(class='modal-tooltip text-error' id='action-error')
+                button(class='default' id='action-cancel') Cancel
+                button(class='default' id='action-authorize') Authorize
+block pageEscaped
+    script(src='/assets/scripts/login-oauth2.js')

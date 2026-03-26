@@ -1,0 +1,135 @@
+<article
+    id="endpoints"
+    authorId=""
+    categoryId="status"
+    title="Endpoints"
+    created="100"
+    snippet=""
+    banner=""
+    noindex="false"
+>
+    <!-- GET /widget.json -->
+    <header>Get Widget</header>
+    <text><c>GET /widget.json</c></text>
+    <text>
+        Returns a unique <a href="#widget-object">Widget Object</a>. This
+        is the same endpoint use for the widget displayed in the top-right 
+        corner of the suzzy games webpage.
+    </text>
+    
+    <subheader>Widget Object</subheader>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>status</column>
+            <column>string</column>
+            <column>Current status either "online", "degraded", or "down"</column>
+        </row>
+        <row>
+            <column>counter_players_online</column>
+            <column>number?</column>
+            <column>Estimated number of players online</column>
+        </row>
+    </table>
+    <quote>This endpoint returns the headers 'X-Refresh' and 'Etag'</quote>
+
+    <!-- GET /status.json -->
+    <header>Get Status</header>
+    <text><c>GET /status.json</c></text>
+    <text>
+        Returns a unique <a href="#status-object">Status Object</a>. Includes
+        the current status, an array of 
+        <a href="/library/status/reference#tracker-object">tracker objects</a>, 
+        and an array of 
+        <a href="/library/status/reference#event-object">event objects</a> 
+        which occurred today.
+    </text>
+    <subheader>Status Object</subheader>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>status</column>
+            <column>string</column>
+            <column>Current status either "online", "degraded", or "down"</column>
+        </row>
+        <row>
+            <column>trackers</column>
+            <column>Array&lt;Trackers&gt;</column>
+            <column>List of Trackers</column>
+        </row>
+        <row>
+            <column>events</column>
+            <column>Array&lt;Events&gt;</column>
+            <column>List of Events for Today</column>
+        </row>
+    </table>
+    <quote>This endpoint returns the headers 'X-Refresh' and 'Etag'</quote>
+    <text>
+        <b>Notice:</b> This endpoint is compressed with <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/gzip_compression">gzip</a>. 
+        Your client must support and notify the server that it accepts gzip 
+        encoded content via the <c>Accept-Encoding</c> header. Otherwise 
+        your request will be rejected with a <c>415 Unsupported Media Type</c> 
+        status code.
+    </text>
+
+    <!-- GET /events -->
+    <header>Get Events</header>
+    <text><c>GET /events</c></text>
+    <text>
+        Returns an array of <a href="/library/status/reference#event-object">Event Objects</a> 
+        for today. You can request a specific day using the query parameter <c>date</c> in 
+        <c>MM/DD/YYYY</c> format <h>(ex. date=06/26/2003)</h>.
+    </text>
+
+    <!-- GET /status.json -->
+    <header>Get Events Summary</header>
+    <text><c>GET /events/summary</c></text>
+
+    <text>
+        Returns a Unique <a href="#summary-object">Summary Object</a> for this month.
+        You can request a specific month using the query parameter <c>date</c> in 
+        <c>MM/YYYY</c> format. <h>(ex. date=06/2003)</h>
+    </text>
+    <subheader>Summary Object</subheader>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>uptime</column>
+            <column>string</column>
+            <column>Uptime Percentage in Float</column>
+        </row>
+        <row>
+            <column>results</column>
+            <column>...</column>
+            <column>See Description Below</column>
+        </row>
+    </table>
+    <text>
+        The results field is a JSON object with the <b>keys</b> being the <i>day of the month</i>, and it's 
+        <b>value</b> being an <i>Array with three integers</i>. Each integer represents how many seconds of
+        <b>Degredation</b>, <b>Downtime</b>, and <b>Maintenance</b> occurred 
+        that day, respectively.
+    </text>
+
+    <code syntax="json">
+{
+    "uptime": "99.99",      // Uptime Percent as Float
+    "results": {
+        "0": [0, 0, 3600],  // "Day": [Seconds Degraded, Downtime, Maintenance]
+        "12": [300, 0, 0],  // Ex. 5 Minutes of Downtime on the 12th day of the month
+    }
+}
+    </code>
+</article>

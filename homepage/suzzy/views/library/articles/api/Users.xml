@@ -1,0 +1,212 @@
+<article
+    id="users"
+    authorId=""
+    categoryId="api"
+    title="Users"
+    created="300"
+    snippet="Developer documentation for Users"
+    banner=""
+    noindex="false"
+>
+    <!-- User Object Reference -->
+    <header>User Object</header>
+    <text>
+        Fields for a user object and the required oAuth2 Scope to view them.
+        Optional fields <h>(Type ending with ?)</h> or hidden fields <h>(Missing oAuth2 Scope)</h>
+        will have their value set as <c>null</c> instead.
+    </text>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+            <column>Required oAuth2 Scope</column>
+        </row>
+        <row>
+            <column>id</column>
+            <column>integer</column>
+            <column>their unique account id</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>created</column>
+            <column>timestamp</column>
+            <column>their account creation timestamp</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>public_flags</column>
+            <column>integer</column>
+            <column>their public flags (badges)</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>username</column>
+            <column>string</column>
+            <column>their username</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>displayname</column>
+            <column>string</column>
+            <column>their displayname</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>subtitle</column>
+            <column>string</column>
+            <column>their pronouns, status, etc.</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>biography</column>
+            <column>string</column>
+            <column>their biography</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>accent_background</column>
+            <column>integer</column>
+            <column>their profile background color</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>accent_banner</column>
+            <column>integer</column>
+            <column>their profile banner color</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>accent_border</column>
+            <column>integer</column>
+            <column>their profile border color</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>avatar</column>
+            <column>string?</column>
+            <column>their avatar image hash</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>banner</column>
+            <column>string?</column>
+            <column>their banner image hash</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>verified</column>
+            <column>boolean</column>
+            <column>has email been verified?</column>
+            <column>identify</column>
+        </row>
+        <row>
+            <column>email</column>
+            <column>string?</column>
+            <column>their email address</column>
+            <column>email</column>
+        </row>
+    </table>
+    <quote>Usernames will always be alphanumeric with underscores and between 3-32 characters long</quote>
+    <quote>Usernames may change without warning, use account IDs instead!</quote>
+    <quote>Displaynames and Subtitles are up to 32 characters long</quote>
+    <quote>Biographies are up to 320 chracters long</quote>
+    <quote>Colors are in Decimal Representation</quote>
+
+    <!-- User Public Flags/Badges -->
+    <header>Public Flags</header>
+    <text>
+        Use a <b>Bitwise AND</b> operation in your language of choice to see if a flag is
+        set for a user. Flags are primarily used for badges which are special achievements
+        that were obtainable for a limited time or gifted to specific users.
+    </text>
+    <table>
+        <row>
+            <column>Value</column>
+            <column>Name</column>
+            <column>Description</column>
+            <column>Obtainable?</column>
+        </row>
+        <row>
+            <column>1 (1 &lt;&lt; 0)</column>
+            <column>BADGE_CROWN</column>
+            <column>Reserved for bakonpancakz</column>
+            <column>Never</column>
+        </row>
+        <row>
+            <column>2 (1 &lt;&lt; 1)</column>
+            <column>BADGE_VIP</column>
+            <column>Reserved for important users</column>
+            <column>No</column>
+        </row>
+        <row>
+            <column>4 (1 &lt;&lt; 2)</column>
+            <column>BADGE_PICROSS</column>
+            <column>Awarded by completing Challenge #1</column>
+            <column>Yes</column>
+        </row>
+        <row>
+            <column>8 (1 &lt;&lt; 3)</column>
+            <column>PUBLIC_UNAVAILABLE</column>
+            <column>Account is Unavailable</column>
+            <column>TOS Violation</column>
+        </row>
+    </table>
+    <quote>
+        Unavailable accounts, may be banned or deleted. 
+        The reasoning will be sent to the account owners email.
+    </quote>
+
+    <!-- GET /users/@me -->
+    <header>Get Current User</header>
+    <text><c>GET /users/@me</c></text>
+    <text>
+        Returns the current user if you have the <c>identify</c> scope, also 
+        returns email if you also have the <c>email</c> scope.
+    </text>
+
+    <!-- GET /users/@me/connections -->
+    <header>Get Connections for Current User</header>
+    <text><c>GET /users/@me/connections</c></text>
+    <text>
+       Requires the <c>connections</c> <a href='/library/api/oauth2#oauth2-scopes'>OAuth2 Scope</a>.
+       Returns an array of <a href="#connection-object">Connection</a> Objects the user is actively connected to.
+    </text>
+    <subheader>Connection Object</subheader>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>id</column>
+            <column>integer</column>
+            <column>Unique Connection ID</column>
+        </row>
+        <row>
+            <column>created</column>
+            <column>Date</column>
+            <column>ISO Timestamp of when connection was created</column>
+        </row>
+        <row>
+            <column>scopes</column>
+            <column>integer</column>
+            <column>Associated OAuth2 scopes with connection</column>
+        </row>
+        <row>
+            <column>application</column>
+            <column>Application Object</column>
+            <column>An Application Object</column>
+        </row>
+    </table>
+    <text><i>Quick link to</i> <a href="/library/api/applications#application-object">Application Object</a>.</text>
+
+    <!-- GET /users/<user.username> -->
+    <header>Get User by Username </header>
+    <text><c>GET /users/&lt;user.username&gt;</c></text>
+    <text>
+        Returns a <a href="#user-object">user object</a> for a given username, 
+        doesn't require any authorization.
+    </text>
+</article>

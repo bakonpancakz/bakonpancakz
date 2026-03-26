@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <atom:link href="{{ .Site.Host}}/rss.xml" rel="self" type="application/rss+xml"></atom:link>
+        <link>{{ .Site.Host }}</link>
+        <title><![CDATA[{{ .Site.Name }}]]></title>
+        <description><![CDATA[{{ .Site.Description }}]]></description>
+        <category>{{ .Site.Category }}</category>
+        <language>{{ .Site.Locale }} </language>
+        <generator>teto</generator>
+        <copyright>Copyright 2025 {{ .Site.Owner }}</copyright>
+        <lastBuildDate>{{ .BuildDate.UTC.Format .RFC1123 }}</lastBuildDate>
+    </channel>
+    {{ range $index, $elem := .Articles }}
+    <item>
+        <link>{{ $.Site.Host }}/{{ $elem.Slug }}</link>
+        <guid isPermaLink="true">{{ $.Site.Host }}/{{ $elem.Slug }}</guid>
+        <title><![CDATA[{{ $elem.Title }}]]></title>
+        <description><![CDATA[{{ $elem.Description }}]]></description>
+        <pubDate>{{ $elem.Date.UTC.Format $.RFC1123 }}</pubDate>
+        {{ range $i, $tag := $elem.Tags }}
+        <category>{{ $tag }}</category>
+        {{ end }}
+    </item>
+    {{ end }}
+</rss>

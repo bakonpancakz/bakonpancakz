@@ -1,0 +1,57 @@
+<article
+    id="applications"
+    authorId=""
+    categoryId="api"
+    title="Applications"
+    created="500"
+    snippet="Developer documentation for Applications"
+    banner=""
+    noindex="false"
+>
+    <header>Introduction</header>
+    <text>
+        Applications allow you to integrate the suzzy API into your projects. 
+        You can create and manage them while in the <a href='/profile/applications'>Applications</a> 
+        section of your profile.
+    </text>
+
+    <subheader>Application Object</subheader>
+    <table>
+        <row>
+            <column>Field</column>
+            <column>Type</column>
+            <column>Description</column>
+        </row>
+        <row>
+            <column>id</column>
+            <column>integer</column>
+            <column>Unique Application ID</column>
+        </row>
+        <row>
+            <column>created</column>
+            <column>Date</column>
+            <column>ISO Timestamp of when application was created</column>
+        </row>
+        <row>
+            <column>flags</column>
+            <column>integer</column>
+            <column>the application's public flags</column>
+        </row>
+        <row>
+            <column>name</column>
+            <column>string</column>
+            <column>the application's name</column>
+        </row>
+        <row>
+            <column>description</column>
+            <column>string?</column>
+            <column>the application's description</column>
+        </row>
+        <row>
+            <column>icon</column>
+            <column>string?</column>
+            <column>the application's image hash</column>
+        </row>
+    </table>
+
+</article>

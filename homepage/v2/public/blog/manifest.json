@@ -1,0 +1,59 @@
+{
+    "links": [
+        {
+            "id": "/blog/",
+            "icon": "script:icon_top",
+            "name": "LATEST",
+            "description": "BROWSE ARTICLES"
+        },
+        {
+            "id": "/blog/rss.xml",
+            "icon": "script:icon_rss",
+            "name": "RSS",
+            "description": "FOR NERDS WITH READERS"
+        },
+        {
+            "id": "/",
+            "icon": "script:icon_cross",
+            "name": "EXIT",
+            "description": "RETURN TO HOMEPAGE"
+        }
+    ],
+    "authors": [
+        {
+            "id": "bakonpancakz",
+            "icon": "script:author_bakonpancakz",
+            "name": "BAKONPANCAKZ",
+            "description": "THE BOSS"
+        }
+    ],
+    "tags": [
+        {
+            "id": "development",
+            "icon": "script:tags_development",
+            "name": "DEVELOPMENT",
+            "description": "BINARY MAGIC / SPELLS"
+        },
+        {
+            "id": "personal",
+            "icon": "script:tags_personal",
+            "name": "PERSONAL",
+            "description": "PROJECTS AND TIDBITS"
+        }
+    ],
+    "articles": [
+        {
+            "id": "setting-up-an-email-server",
+            "banner_main": "/public/blog/setting-up-an-email-server/banner_main.gif",
+            "banner_list": "/public/blog/setting-up-an-email-server/banner_list.gif",
+            "date": "2024-11-06T00:00:00Z",
+            "title": "Setting Up an Email API",
+            "description": "Freaking emails, how do they work?",
+            "author": "bakonpancakz",
+            "tags": [
+                "development",
+                "personal"
+            ]
+        }
+    ]
+}
