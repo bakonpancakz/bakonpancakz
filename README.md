@@ -2,7 +2,7 @@
 
 <p><b>Current Mission:</b> be awesome sauce</p>
 
-<p>Things that I use on a regular basis, displayed in no particular order:</p>
+<p>Things which I use on a regular basis, displayed in no particular order:</p>
 <p>
     <a href="https://www.backblaze.com"><img alt="Backblaze" src="badges/generated/backblaze.png" /></a>
     <a href="https://www.hetzner.com"><img alt="Hetzner" src="badges/generated/hetzner.png" /></a>
@@ -32,7 +32,7 @@
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img alt="CSS" src="badges/generated/css.png" /></a>
 </p>
 
-<p>Projects that I consider cool enough to publish, check these out:</p>
+<p>Personal projects that I consider cool enough to show off:</p>
 <table>
     <thead>
         <tr align="left">
@@ -46,22 +46,22 @@
         <tr>
             <td>💬 dsoob</td>
             <td>Self-Hosted Communication Platform</td>
-            <td><a href="https://panca.kz/repo/dsoob">Repository</a></td>
+            <td><a href="https://github.com/bakonpancakz/dsoob">Repository</a></td>
         </tr>
         <tr>
             <td>🎨 gifuu</td>
             <td>The anonymous gif sharing site</td>
-            <td><a href="https://panca.kz/repo/gifuu">Repository</a></td>
+            <td><a href="https://github.com/bakonpancakz/gifuu">Repository</a></td>
         </tr>
         <tr>
             <td>💫 oneshot</td>
             <td>Cross-Platform Game Engine (Used by KUMA)</td>
-            <td><a href="https://panca.kz/repo/oneshot">Repository</a></td>
+            <td><a href="https://github.com/bakonpancakz/oneshot">Repository</a></td>
         </tr>
         <tr>
             <td>🧪 clitools</td>
             <td>Curious collection of CLI Tools & Scripts</td>
-            <td><a href="https://panca.kz/repo/clitools">Repository</a></td>
+            <td><a href="https://github.com/bakonpancakz/clitools">Repository</a></td>
         </tr>
         <!-- Personal -->
         <tr>
@@ -74,13 +74,8 @@
         </tr>
         <tr>
             <td>🥕 bunniezluvkarrotz</td>
-            <td>Deceptively high quality abandonware</td>
-            <td><a href="https://github.com/bunniezluvkarrotz">Game</a></td>
-        </tr>
-        <tr>
-            <td>🥞 bakonpancakz</td>
-            <td>Homepage history</td>
-            <td><a href="https://panca.kz/repo/dsoob">Repository</a></td>
+            <td>Deceptively high quality abandonware (from me)</td>
+            <td><a href="https://github.com/bunniezluvkarrotz">Website</a></td>
         </tr>
     </tbody>
 </table>
